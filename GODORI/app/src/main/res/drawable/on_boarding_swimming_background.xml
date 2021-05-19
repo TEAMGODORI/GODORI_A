@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true"
+        android:drawable="@drawable/img_fav_swimming">
+        <shape android:shape="oval">
+            <corners
+                android:radius="8dp"/>
+            <size
+                android:width="98dp"
+                android:height="98dp"/>
+        </shape>
+    </item>
+    <item android:state_checked="false"
+        android:drawable="@drawable/on_boarding_img_swimming">
+        <shape android:shape="oval">
+            <solid android:color="#4cdde1e5" />
+            <corners
+                android:radius="8dp"/>
+            <size
+                android:width="98dp"
+                android:height="98dp"/>
+        </shape>
+    </item>
+</selector>

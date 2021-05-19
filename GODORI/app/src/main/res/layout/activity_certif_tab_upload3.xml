@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.CertifTabUpload3Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar1"
+                android:layout_width="match_parent"
+                android:layout_height="64dp">
+
+                <ImageButton
+                    android:id="@+id/backBtn3"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@color/transparent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ct_btn_arrow_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="오늘의 운동 남기기"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eff0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ct_ic_exercise" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="141dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="어떤 운동 했어요?"
+                    android:textColor="#2c2c2d"
+                    android:textSize="18dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/exercise_Btn1"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="헬스"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/exercise_Btn2"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_toRightOf="@+id/exercise_Btn1"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="필라테스/요가"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+
+                    <CheckBox
+                        android:id="@+id/exercise_Btn3"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/exercise_Btn1"
+                        android:layout_marginLeft="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="등산"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/exercise_Btn4"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/exercise_Btn2"
+                        android:layout_toRightOf="@+id/exercise_Btn3"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="자전거"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+
+                    <CheckBox
+                        android:id="@+id/exercise_Btn5"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/exercise_Btn3"
+                        android:layout_marginLeft="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="수영"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/exercise_Btn6"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/exercise_Btn4"
+                        android:layout_toRightOf="@+id/exercise_Btn5"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="런닝"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/exercise_Btn7"-->
+                    <!--                        android:layout_width="164dp"-->
+                    <!--                        android:layout_height="42dp"-->
+                    <!--                        android:layout_below="@+id/exercise_Btn5"-->
+                    <!--                        android:layout_marginLeft="42dp"-->
+                    <!--                        android:background="@drawable/ct_ly_button_exercise_check"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:includeFontPadding="false"-->
+                    <!--                        android:text="헬스"-->
+                    <!--                        android:textColor="@color/ct_text_color" />-->
+
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/exercise_Btn8"-->
+                    <!--                        android:layout_width="164dp"-->
+                    <!--                        android:layout_height="42dp"-->
+                    <!--                        android:layout_below="@+id/exercise_Btn6"-->
+                    <!--                        android:layout_toRightOf="@+id/exercise_Btn7"-->
+                    <!--                        android:background="@drawable/ct_ly_button_exercise_check"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:includeFontPadding="false"-->
+                    <!--                        android:text="자전거"-->
+                    <!--                        android:textColor="@color/ct_text_color" />-->
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/exercise_Btn9"-->
+                    <!--                        android:layout_width="164dp"-->
+                    <!--                        android:layout_height="42dp"-->
+                    <!--                        android:layout_below="@+id/exercise_Btn7"-->
+                    <!--                        android:layout_marginLeft="42dp"-->
+                    <!--                        android:background="@drawable/ct_ly_button_exercise_check"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:includeFontPadding="false"-->
+                    <!--                        android:text="헬스"-->
+                    <!--                        android:textColor="@color/ct_text_color" />-->
+
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/exercise_Btn10"-->
+                    <!--                        android:layout_width="164dp"-->
+                    <!--                        android:layout_height="42dp"-->
+                    <!--                        android:layout_below="@+id/exercise_Btn8"-->
+                    <!--                        android:layout_toRightOf="@+id/exercise_Btn9"-->
+                    <!--                        android:background="@drawable/ct_ly_button_exercise_check"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:includeFontPadding="false"-->
+                    <!--                        android:text="자전거"-->
+                    <!--                        android:textColor="@color/ct_text_color" />-->
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/exercise_Btn11"-->
+                    <!--                        android:layout_width="164dp"-->
+                    <!--                        android:layout_height="42dp"-->
+                    <!--                        android:layout_below="@+id/exercise_Btn9"-->
+                    <!--                        android:layout_marginLeft="42dp"-->
+                    <!--                        android:background="@drawable/ct_ly_button_exercise_check"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:includeFontPadding="false"-->
+                    <!--                        android:text="헬스"-->
+                    <!--                        android:textColor="@color/ct_text_color" />-->
+
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/exercise_Btn12"-->
+                    <!--                        android:layout_width="164dp"-->
+                    <!--                        android:layout_height="42dp"-->
+                    <!--                        android:layout_below="@+id/exercise_Btn10"-->
+                    <!--                        android:layout_toRightOf="@+id/exercise_Btn11"-->
+                    <!--                        android:background="@drawable/ct_ly_button_exercise_check"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:includeFontPadding="false"-->
+                    <!--                        android:text="자전거"-->
+                    <!--                        android:textColor="@color/ct_text_color" />-->
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="348dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="32dp"
+                android:background="#eff0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="246dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ct_ic_exercise" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="125dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="운동 강도는 어땠나요?"
+                    android:textColor="#2c2c2d"
+                    android:textSize="18dp" />
+
+                <RadioGroup
+                    android:id="@+id/intensity_RBtn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/intensity_Btn1"
+                        android:layout_width="109dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="살살"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/intensity_Btn2"
+                        android:layout_width="109dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="쏘쏘"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/intensity_Btn3"
+                        android:layout_width="109dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="빡세"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="348dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="32dp"
+                android:background="#eff0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="404dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ct_ic_exercise" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="오늘 운동은 말이죠"
+                    android:textColor="#2c2c2d"
+                    android:textSize="18dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/reviews_Btn1"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="2% 부족했어요"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/reviews_Btn2"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_toRightOf="@+id/reviews_Btn1"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="근육을 마구 자극했어요"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/reviews_Btn3"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/reviews_Btn1"
+                        android:layout_marginLeft="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="시원하게 땀 흘렸어요"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/reviews_Btn4"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/reviews_Btn2"
+                        android:layout_toRightOf="@+id/reviews_Btn3"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="쉬엄쉬엄 했어요"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/reviews_Btn5"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/reviews_Btn3"
+                        android:layout_marginLeft="42dp"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="오늘도 해낸 나에게 칭찬!"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/reviews_Btn6"
+                        android:layout_width="164dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/reviews_Btn4"
+                        android:layout_toRightOf="@+id/reviews_Btn5"
+                        android:background="@drawable/ct_ly_button_exercise_check"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="내일 열심히 할래요"
+                        android:textColor="@color/ct_text_color"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/next3Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/gr_ly_btn_next"
+                    android:enabled="false"
+                    android:text="다음"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

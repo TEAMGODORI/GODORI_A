@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SettingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <ImageView
+            android:id="@+id/setting_btn_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/gr_btn_back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="설정"
+            android:textColor="#000000"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:includeFontPadding="false"
+                android:text="앱 버전"
+                android:fontFamily="@font/notosanskr_medium"
+                android:letterSpacing="-0.02"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/version_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="268dp"
+                android:layout_marginTop="27dp"
+                android:layout_toRightOf="@+id/version"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_medium"
+                android:letterSpacing="-0.02"
+                android:text="1.0.0"
+                android:textSize="14dp"
+                android:textColor="@color/blue" />
+
+            <ImageButton
+                android:id="@+id/version_imgBtn"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@+id/version_num"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/st_btn_arrow_right" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logout_layout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/logoutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:includeFontPadding="false"
+            android:text="로그아웃"
+            android:textColor="#000000" />
+
+        <ImageButton
+            android:id="@+id/logoutImgBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@+id/logoutText"
+            android:background="@color/transparent"
+            android:src="@drawable/st_btn_arrow_right"
+            android:scaleType="fitCenter"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

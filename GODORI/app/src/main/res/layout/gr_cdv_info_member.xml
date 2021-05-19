@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gr_cdv_recruiting_info"
+    android:layout_width="70dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="23dp"
+    android:layout_marginBottom="12dp"
+    card_view:cardBackgroundColor="@color/transparent"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    card_view:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/gr_iv_member_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gr_img_profile_basic" />
+
+        <TextView
+            android:id="@+id/gr_tv_member_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:text="지니박"
+            android:textColor="#494949"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

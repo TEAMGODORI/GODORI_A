@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.MyInfoTabFragment"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="283dp"
+            android:background="@drawable/gr_ly_gradation">
+
+            <ImageButton
+                android:id="@+id/my_btn_setting"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/my_img_setting" />
+
+            <ImageView
+                android:id="@+id/my_iv_profile"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/my_ly_iv_profile" />
+
+            <TextView
+                android:id="@+id/my_tv_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_iv_profile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:includeFontPadding="false"
+                android:text="도리"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/my_vw_stroke"
+                android:layout_width="2dp"
+                android:layout_height="42dp"
+                android:layout_below="@+id/my_tv_userName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:background="#5c6cf3" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:layout_toLeftOf="@+id/my_vw_stroke">
+
+                <TextView
+                    android:id="@+id/my_tv_title_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="136dp"
+                    android:includeFontPadding="false"
+                    android:text="이번주 달성률"
+                    android:textColor="#99ffffff" />
+
+                <TextView
+                    android:id="@+id/my_tv_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_tv_title_percent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="6dp"
+                    android:includeFontPadding="false"
+                    android:text="97%"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="136dp"
+                android:layout_toRightOf="@id/my_vw_stroke">
+
+                <TextView
+                    android:id="@+id/my_tv_title_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="지금까지 인증"
+                    android:textColor="#99ffffff" />
+
+                <TextView
+                    android:id="@+id/my_tv_week_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_tv_title_num"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="21회"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/my_btn_taste"
+                android:layout_width="280dp"
+                android:layout_height="46dp"
+                android:layout_below="@id/my_vw_stroke"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="24dp"
+                android:adjustViewBounds="true"
+                android:background="@color/transparent"
+                android:scaleType="fitStart"
+                android:src="@drawable/my_img_taste" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingLeft="22dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginTop="24dp"
+                android:textSize="16sp"
+                android:textColor="#161c49"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="인증 사진"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_rcv_picture"
+                android:layout_marginTop="16dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

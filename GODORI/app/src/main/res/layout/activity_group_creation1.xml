@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gr_bg_create"
+    tools:context=".activity.GroupCreation1Activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="64dp">
+
+                <ImageButton
+                    android:id="@+id/gr_btn_creation1_back"
+                    android:background="@drawable/gr_btn_back_white"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="fitStart"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="28dp"/>
+            </androidx.appcompat.widget.Toolbar>
+
+            <LinearLayout
+                android:id="@+id/gr_creation1_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="32dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/gr_img_group" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:includeFontPadding="false"
+                    android:text="그룹 만들기"
+                    android:letterSpacing="-0.02"
+                    android:textColor="#b3ffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:text="그룹  이름을 입력해주세요"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:letterSpacing="-0.02"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/gr_et_line"
+                    android:layout_width="350dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="85dp"
+                    android:backgroundTint="@color/main"
+                    android:gravity="center_horizontal"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@drawable/gr_ly_creation_cur"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/gr_tv_name_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:includeFontPadding="false"
+                    android:text="0/15"
+                    android:letterSpacing="-0.02"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+        <Button
+            android:id="@+id/gr_btn_creation1_next"
+            android:layout_marginHorizontal="32dp"
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:layout_height="45dp"
+            android:background="@drawable/gr_ly_btn_next"
+            android:gravity="center"
+            android:text="다음"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

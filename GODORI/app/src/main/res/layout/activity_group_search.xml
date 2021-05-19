@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.GroupSearchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="50dp"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/gr_btn_search_back"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="42dp"
+            android:background="@color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/gr_btn_back_black" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/gr_tv_search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="찾는 그룹이 있나요?"
+            android:textColor="#000000"
+            android:fontFamily="@font/notosanskr_bold"
+            android:letterSpacing="-0.02"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/gr_et_search"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/gr_tv_search_title"
+            android:layout_marginTop="59dp"
+            android:hint="그룹 검색하기"
+            android:theme="@style/customTextViewFontStyle"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
+            android:inputType="text"
+            android:maxLines="1"
+            android:backgroundTint="@color/main"
+            android:textColorHint="#c1c1c1"
+            android:textCursorDrawable="@drawable/gr_ly_creation_cur"
+            android:textSize="18dp" />
+
+        <ImageButton
+            android:id="@+id/gr_btn_search"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/gr_tv_search_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="70dp"
+            android:background="@color/transparent"
+            android:enabled="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gr_img_search_off" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gr_rcv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/gr_btn_search"/>
+
+        <TextView
+            android:id="@+id/no_search_results_found_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_search_results_found"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/gr_rcv_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/gr_rcv_search" />
+
+    </RelativeLayout>
+</LinearLayout>

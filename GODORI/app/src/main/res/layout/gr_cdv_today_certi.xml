@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gr_cdv_recruiting_info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="18dp"
+    android:clickable="true"
+    android:focusable="true"
+    card_view:cardBackgroundColor="@color/transparent"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    card_view:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/gr_iv_more_title"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/gr_ly_iv_today"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gr_img_profile_basic"
+            card_view:riv_corner_radius="8dp" />
+
+        <TextView
+            android:id="@+id/gr_tv_today_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:includeFontPadding="false"
+            android:text="지니박"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#494949"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/gr_tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="3"
+                android:textColor="#c1c1c1"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/gr_tv_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="/4"
+                android:textColor="#c1c1c1"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

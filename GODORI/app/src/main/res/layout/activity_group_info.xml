@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:orientation="vertical"
+    tools:context=".activity.GroupInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/gr_ll_info"
+            android:layout_width="match_parent"
+            android:layout_height="269dp">
+
+            <ImageView
+                android:id="@+id/gr_iv_info_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/gr_img_info_title" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/btnRecruitingBack"
+                android:layout_width="match_parent"
+                android:layout_height="54dp">
+
+                <ImageButton
+                    android:id="@+id/gr_btn_info_back"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/gr_btn_back"
+                    android:gravity="center" />
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="-62dp"
+            android:background="@drawable/gr_ly_rl_info1"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/gr_tv_info_title_exercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:text="헬스"
+                android:textColor="#5c6cf3"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/gr_tv_info_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gr_tv_info_title_exercise"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:text="고도리"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="312dp"
+                android:layout_height="57dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="89dp"
+                android:background="@drawable/gr_img_info_line" />
+
+            <TextView
+                android:id="@+id/gr_tv_info_title_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="107dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:text="헬린이들 집합"
+                android:textColor="#2c2c2d"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="23dp">
+
+                <TextView
+                    android:id="@+id/gr_tv_info_title_startdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="2021.01.26~"
+                    android:textColor="#2c2c2d"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/gr_tv_info_title_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/gr_tv_info_title_startdate"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="・"
+                    android:textColor="#2c2c2d"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/gr_create_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/gr_tv_info_title_point"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="벅지니"
+                    android:textColor="#2c2c2d"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F5F5F5">
+
+            <RelativeLayout
+                android:layout_width="376dp"
+                android:layout_height="277dp"
+                android:layout_margin="18dp"
+                android:background="@drawable/gr_ly_rl_info2"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/gr_tv_info_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
+                    android:text="그룹 정보"
+                    android:textColor="#2c2c2d"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/gr_rl_info_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gr_tv_info_info"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/gr_iv_info_info"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/gr_img_info_group" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/gr_iv_info_info"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="모집 인원"
+                        android:textColor="#6280f2" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_member_total_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="end"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="13"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_member_recruit_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/gr_tv_info_member_total_num"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="end"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="5/"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gr_rl_info_cycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gr_rl_info_info"
+                    android:layout_marginTop="19dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:letterSpacing="-0.02">
+
+                    <ImageView
+                        android:id="@+id/gr_iv_info_cycle"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/gr_img_info_cycle" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_cycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/gr_iv_info_cycle"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="운동 주기"
+                        android:textColor="#6280f2" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_cycle_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="end"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="주4회"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gr_rl_info_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gr_rl_info_cycle"
+                    android:layout_marginTop="19dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:letterSpacing="-0.02">
+
+                    <ImageView
+                        android:id="@+id/gr_iv_info_level"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/gr_img_info_level" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/gr_iv_info_level"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="운동 강도"
+                        android:textColor="#6280f2" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_level_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="end"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="중"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gr_rl_info_percent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gr_rl_info_level"
+                    android:layout_marginTop="19dp">
+
+                    <ImageView
+                        android:id="@+id/gr_iv_info_percent"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/gr_img_info_percent" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/gr_iv_info_percent"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="달성률"
+                        android:textColor="#6280f2" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_percent_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="end"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="100%"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gr_rl_info_exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gr_rl_info_percent"
+                    android:layout_marginTop="19dp">
+
+                    <ImageView
+                        android:id="@+id/gr_iv_info_exercise"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/gr_img_info_excersie" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_exercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/gr_iv_info_exercise"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="선호하는 운동"
+                        android:textColor="#6280f2" />
+
+                    <TextView
+                        android:id="@+id/gr_tv_info_exercise_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="end"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:text="헬스"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/gr_btn_join_recruiting"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="18dp"
+            android:background="@drawable/gr_ly_btn_next"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:letterSpacing="-0.02"
+            android:text="참여하기"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+</ScrollView>

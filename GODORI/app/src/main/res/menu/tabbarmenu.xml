@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_group"
+        android:icon="@drawable/tab_ic_vec_group_un"
+        android:title="그룹"/>
+    <item
+        android:id="@+id/menu_certi"
+        android:icon="@drawable/tab_ic_vec_certify_un"
+        android:title="인증" />
+    <item
+        android:id="@+id/menu_myinfo"
+        android:icon="@drawable/tab_ic_vec_myinfo_un"
+        android:title="내정보" />
+</menu>
