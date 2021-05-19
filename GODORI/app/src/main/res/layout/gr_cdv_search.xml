@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gr_cdv_recruiting_taste"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="@android:color/transparent"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    card_view:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/gr_tv_search_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:includeFontPadding="false"
+                android:text="고도리"
+                android:fontFamily="@font/notosanskr_medium"
+                android:letterSpacing="-0.02"
+                android:textColor="#494949"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/gr_btn_search_result"
+                android:layout_width="94dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gr_img_search_more" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eff0f0" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

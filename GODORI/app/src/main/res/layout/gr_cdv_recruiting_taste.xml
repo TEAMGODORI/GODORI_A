@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    card_view:cardPreventCornerOverlap="false"
+    android:layout_marginRight="8dp"
+    card_view:cardBackgroundColor="@android:color/transparent"
+    android:id="@+id/gr_cdv_recruiting_taste">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gr_ly_cdv_recruiting_taste">
+        <TextView
+            android:id="@+id/gr_tv_taste_cdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:includeFontPadding="false"
+            android:textColor="#2c2c2d"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="6.5dp"
+            android:gravity="center_horizontal"
+            android:text="" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

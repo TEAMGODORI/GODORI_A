@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Information1Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9">
+
+        <TextView
+            android:id="@+id/identityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="60dp"
+            android:text="본인 인증하기"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/identityText"
+            android:text="1/2"
+            android:textColor="@color/blue"
+            android:textSize="16dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/identityText"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:max="2"
+            android:progress="1"
+            android:progressTint="@color/blue" />
+
+
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressBar1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:text="휴대폰 번호를 입력하세요"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phoneText"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:inputType="phone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/next1Btn"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_below="@+id/editTextPhone"
+            android:layout_marginTop="390dp"
+            android:background="@drawable/button_rectangle"
+            android:gravity="center"
+            android:text="다음"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".activity.CertifTabUpload4Activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/backBtn4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:scaleType="fitCenter"
+            android:background="@color/transparent"
+            android:src="@drawable/ct_btn_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="오늘의 운동 남기기"
+            android:textColor="#000000"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eff0f0" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="32dp"
+            android:includeFontPadding="false"
+            android:text="오늘 운동에 대한 코멘트는?"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/certi_upload_comment"
+            android:layout_width="348dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="32dp"
+            android:layout_below="@+id/comment"
+            android:background="@drawable/edittext_rounded_corner_rectangle"
+            android:gravity="top"
+            android:letterSpacing="-0.02"
+            android:hint="여기에 입력하세요"
+            android:includeFontPadding="false"
+            android:padding="12dp"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/gr_ly_btn_next"
+            android:textSize="18dp"
+            android:enabled="false"
+            android:textColor="@color/white"
+            android:text="완료"/>
+
+    </RelativeLayout>
+</LinearLayout>

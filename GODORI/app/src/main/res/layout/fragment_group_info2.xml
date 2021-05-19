@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.GroupInfo2Fragment">
+
+    <RelativeLayout
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/gr_ly_rl_info2"
+        android:paddingLeft="21dp"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:id="@+id/gr_tv_info_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="그룹원 정보"
+            android:fontFamily="@font/notosanskr_bold"
+            android:letterSpacing="-0.02"
+            android:textColor="#494949"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/gr_view_line_2"
+            android:layout_width="336dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/gr_tv_info_info"
+            android:layout_marginTop="15dp"
+            android:background="#f2f2f2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gr_rcv_info_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gr_view_line_2"
+            android:layout_marginTop="17dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </RelativeLayout>
+
+</FrameLayout>

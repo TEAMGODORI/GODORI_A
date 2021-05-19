@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/certifTabFrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.CertifTabFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:background="@color/blue"
+        android:orientation="horizontal"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:includeFontPadding="false"
+            android:text="운동 인증하기"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:includeFontPadding="false"
+            android:text="오늘의 운동을 간편하게 공유해보세요!"
+            android:textColor="#ffffff"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/uploadBtn1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ct_btn_add_upload"/>
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                    android:id="@+id/cal"
+                    android:layout_width="match_parent"
+                    android:layout_height="177dp"
+                    android:background="@color/white"
+                    android:descendantFocusability="blocksDescendants"
+                    app:mcv_dateTextAppearance="@style/calDateViewFontStyle"
+                    app:mcv_headerTextAppearance="@style/calHeaderViewFontStyle"
+                    app:mcv_leftArrowMask="@drawable/certif_left_arrow"
+                    app:mcv_rightArrowMask="@drawable/certif_right_arrow"
+                    app:mcv_selectionColor="#668bef"
+                    app:mcv_showOtherDates="other_months"
+                    app:mcv_tileSize="54dp"
+                    app:mcv_weekDayTextAppearance="@style/customTextViewFontStyle"
+                    tools:ignore="MissingConstraints" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dcdcdc" />
+
+            <TextView
+                android:id="@+id/calendarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:letterSpacing="-0.02"
+                android:layout_marginBottom="10dp"
+                android:includeFontPadding="false"
+                android:text="date"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#161c49"
+                android:textSize="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/certifRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="22dp"
+                android:background="@color/white"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

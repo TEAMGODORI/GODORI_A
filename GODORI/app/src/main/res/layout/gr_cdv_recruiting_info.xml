@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gr_cdv_recruiting_info"
+    card_view:cardBackgroundColor="@color/white"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground"
+    card_view:cardPreventCornerOverlap="false"
+    android:focusable="true">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eff0f0"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rl_GroupRecruitingCard_Top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="헬스"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="@color/main"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="2분 전"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_medium"
+                android:layout_alignParentRight="true"
+                android:textColor="#797979"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_groupName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_below="@+id/gr_tv_recruiting_info_categories"
+                android:text="고도리"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_bold"
+                android:layout_marginVertical="8dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gr_tv_recruiting_info_groupName"
+                android:text="헬린이들 모여요"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:textColor="#3C3C3C"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_cycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/gr_tv_recruiting_info_line"
+                android:text="주4회"
+                android:includeFontPadding="false"
+                android:layout_marginRight="8dp"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textColor="#939393"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_regular"
+                android:layout_marginRight="8dp"
+                android:layout_toRightOf="@+id/gr_tv_recruiting_info_cycle"
+                android:layout_below="@+id/gr_tv_recruiting_info_line"
+                android:text="중"
+                android:textColor="#939393"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_GroupRecruitingCard_Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_countTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="모집인원"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"
+                android:textColor="#3C3C3C"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_recruited_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:includeFontPadding="false"
+                android:layout_toRightOf="@+id/gr_tv_recruiting_info_countTitle"
+                android:text="5"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="@color/main"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/gr_tv_recruiting_info_recruit_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_bold"
+                android:layout_toRightOf="@+id/gr_tv_recruiting_info_recruited_num"
+                android:text="/13"
+                android:textStyle="bold"
+                android:textColor="@color/main"
+                android:textSize="16dp" />
+
+
+            <ImageButton
+                android:id="@+id/gr_ib_recruiting_info_countTitle"
+                android:layout_width="94dp"
+                android:layout_height="34dp"
+                android:background="@color/transparent"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/gr_img_recruiting_info_next"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eff0f0"/>
+</androidx.cardview.widget.CardView>

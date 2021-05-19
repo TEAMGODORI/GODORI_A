@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.OnBoarding2Activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/ob_btn_back2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:background="@color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/on_boarding_btn_back_blue" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginRight="32dp"
+        android:max="100"
+        android:progress="100"
+        android:progressBackgroundTint="#f2f2f6"
+        android:progressDrawable="@drawable/progress_bar_states"
+        android:progressTint="#6280f2" />
+
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="-0.02"
+        android:text="평소에 즐겨하는 운동이 무엇인가요?\n메이트와 함께 운동해요!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text2"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="54dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="4">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/yoga_pila_img"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_gravity="center"
+            android:background="@drawable/on_boarding_yoga_background"
+            android:button="@null" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/health_img"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_gravity="center"
+            android:background="@drawable/on_boarding_health_background"
+            android:button="@null" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/running_img"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:background="@drawable/on_boarding_running_background"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tv_yoga_plia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="요가/필테"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="헬스"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_running"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="러닝"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/climb_img"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/on_boarding_climb_background"
+            android:button="@null" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/bicycle_img"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/on_boarding_bicycle_background"
+            android:button="@null" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/swimming_img"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/on_boarding_swimming_background"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tv_climb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="등산"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_bicycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="자전거"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_swimming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="수영"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/gr_ly_btn_next"
+        android:enabled="true"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center"
+        android:text="다음"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+</RelativeLayout>

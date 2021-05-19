@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    tools:context=".fragment.TutorialWeightFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <ImageView
+                android:id="@+id/backBtn1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="16dp"
+                android:text="Skip"
+                android:textColor="@color/blue"
+                android:textSize="16dp" />
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:includeFontPadding="false"
+        android:text="몸무게"
+        android:textColor="#000000"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="135dp"
+        android:includeFontPadding="false"
+        android:text="신체 조건이 비슷한 메이트와 매칭될 수 있어요"
+        android:textColor="#767678"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/next2Btn"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="670dp"
+        android:background="@drawable/button_rectangle"
+        android:gravity="center"
+        android:text="다음"
+        android:textColor="#FFFFFF" />
+
+    <RadioGroup
+        android:id="@+id/toggle"
+        android:layout_width="155dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:checkedButton="@+id/openSwitch"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/openRbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/switch_left_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="onRadioButtonClicked"
+            android:text="공개"
+            android:textColor="@color/blue"
+            android:textSize="11dp" />
+
+        <RadioButton
+            android:id="@+id/unopenRbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/switch_right_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="onRadioButtonClicked"
+            android:text="비공개"
+            android:textColor="@color/white"
+            android:textSize="11dp" />
+    </RadioGroup>
+
+</RelativeLayout>

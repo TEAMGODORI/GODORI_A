@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CertifTabUpload1Activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <ImageButton
+            android:id="@+id/backBtn1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ct_btn_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.02"
+            android:text="오늘의 운동 남기기"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eff0f0" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="335dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="335dp"
+            android:background="#eff0f0"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/save_img1"
+                android:layout_width="274dp"
+                android:layout_height="274dp"
+                android:layout_marginLeft="69dp"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/Img_Upload1"
+                    android:layout_width="274dp"
+                    android:layout_height="274dp"
+                    android:background="@drawable/ct_btn_photo"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ct_img_add_photo" />
+
+                <!--        <ImageView-->
+                <!--            android:layout_width="251dp"-->
+                <!--            android:layout_height="71dp"-->
+                <!--            android:layout_marginTop="208dp"-->
+                <!--            android:layout_marginLeft="81dp"-->
+                <!--            android:src="@drawable/ct_photo_speech"/>-->
+
+                <TextView
+                    android:id="@+id/TimeText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="32dp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/save_img2"
+                android:layout_width="274dp"
+                android:layout_height="274dp"
+                android:layout_marginLeft="69dp"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/Img_Upload2"
+                    android:layout_width="274dp"
+                    android:layout_height="274dp"
+                    android:background="@drawable/ct_btn_photo"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ct_btn_add_upload" />
+
+                <TextView
+                    android:id="@+id/TimeText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="32dp"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!--    <HorizontalScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="260dp">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:padding="15dp"-->
+    <!--            android:orientation="horizontal">-->
+
+    <!--            <ImageButton-->
+    <!--                android:layout_width="240dp"-->
+    <!--                android:layout_height="240dp"-->
+    <!--                android:layout_marginRight="30dp"-->
+    <!--                android:background="@drawable/certif"/>-->
+
+    <!--            <ImageButton-->
+    <!--                android:layout_width="240dp"-->
+    <!--                android:layout_height="240dp"-->
+    <!--                android:layout_marginRight="30dp"-->
+    <!--                android:background="@drawable/certif"/>-->
+    <!--        </LinearLayout>-->
+    <!--    </HorizontalScrollView>-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="380dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/time_RBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="116dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/time_Btn1"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_time_check"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:padding="5dp"
+                android:textColor="@color/ct_text_color" />
+
+            <RadioButton
+                android:id="@+id/time_Btn2"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_time_check"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="bottom|center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:padding="5dp"
+                android:textColor="@color/ct_text_color" />
+
+            <RadioButton
+                android:id="@+id/time_Btn3"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_time_check"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="top|center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:padding="5dp"
+                android:textColor="@color/ct_text_color" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/time_RBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="116dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/time_Btn4"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_time_check"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="bottom"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:padding="5dp"
+                android:textColor="@color/ct_text_color" />
+
+            <RadioButton
+                android:id="@+id/time_Btn5"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_time_check"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="bottom|right"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:padding="5dp"
+                android:textColor="@color/ct_text_color" />
+
+            <RadioButton
+                android:id="@+id/time_Btn6"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_time_check"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.02"
+                android:padding="5dp"
+                android:text="None"
+                android:textAllCaps="false"
+                android:textColor="@color/ct_text_color" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/next1Btn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/gr_ly_btn_next"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </LinearLayout>
+</LinearLayout>

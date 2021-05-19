@@ -1,0 +1,5 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="kakao_app_key">e200b5b18d93a80365a294b563febe4b</string>
+    <string name="no_search_results_found">No Results Found</string>
+</resources>
