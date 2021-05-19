@@ -43,7 +43,7 @@ class OnBoarding3Activity : AppCompatActivity() {
                 val call: Call<ResponseCreateUserInfo> =
                     GroupRetrofitServiceImpl.service_ob_user_creation.requestList(
                         RequestCreateUserInfo(
-                            kakao_id = user?.id!!.toInt(), // 수정하기
+                            kakao_id = user?.id!!,
                             name = user?.kakaoAccount?.profile?.nickname!!,
                             nickname = appNickname,
                             profile_img = user?.kakaoAccount?.profile?.profileImageUrl!!,

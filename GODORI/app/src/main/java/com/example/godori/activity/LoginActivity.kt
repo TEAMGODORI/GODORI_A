@@ -53,37 +53,35 @@ class LoginActivity : AppCompatActivity() {
             if (error != null) {
                 when {
                     error.toString() == AuthErrorCause.AccessDenied.toString() -> {
-                        Toast.makeText(this, "접근이 거부 됨(동의 취소)", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity", "접근이 거부 됨(동의 취소)")
                     }
                     error.toString() == AuthErrorCause.InvalidClient.toString() -> {
-                        Toast.makeText(this, "유효하지 않은 앱", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity", "유효하지 않은 앱")
                     }
                     error.toString() == AuthErrorCause.InvalidGrant.toString() -> {
-                        Toast.makeText(this, "인증 수단이 유효하지 않아 인증할 수 없는 상태", Toast.LENGTH_SHORT)
-                            .show()
+                        Log.d("LoginActivity", "인증 수단이 유효하지 않아 인증할 수 없는 상태")
                     }
                     error.toString() == AuthErrorCause.InvalidRequest.toString() -> {
-                        Toast.makeText(this, "요청 파라미터 오류", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity", "요청 파라미터 오류")
                     }
                     error.toString() == AuthErrorCause.InvalidScope.toString() -> {
-                        Toast.makeText(this, "유효하지 않은 scope ID", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity", "유효하지 않은 scope ID")
                     }
                     error.toString() == AuthErrorCause.Misconfigured.toString() -> {
-                        Toast.makeText(this, "설정이 올바르지 않음(android key hash)", Toast.LENGTH_SHORT)
-                            .show()
+                        Log.d("LoginActivity", "설정이 올바르지 않음(android key hash)")
                     }
                     error.toString() == AuthErrorCause.ServerError.toString() -> {
-                        Toast.makeText(this, "서버 내부 에러", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity",  "서버 내부 에러")
                     }
                     error.toString() == AuthErrorCause.Unauthorized.toString() -> {
-                        Toast.makeText(this, "앱이 요청 권한이 없음", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity", "앱이 요청 권한이 없음")
                     }
                     else -> { // Unknown
-                        Toast.makeText(this, "기타 에러", Toast.LENGTH_SHORT).show()
+                        Log.d("LoginActivity", "기타 에러")
                     }
                 }
             } else if (token != null) {
-                Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
+                Log.d("LoginActivity", "로그인에 성공하였습니다.")
 
                 // 사용자 정보 요청 (기본)
                 UserApiClient.instance.me { user, error ->
@@ -145,19 +143,6 @@ class LoginActivity : AppCompatActivity() {
                                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                         }
                                     }
-//
-//                                    todayMemberList = dataList!!.data.today_member
-//                                    Log.d("GroupAfterTabFragment", todayMemberList.toString())
-//                                    unTodayMemberList = dataList!!.data.not_today_member
-//                                    Log.d("GroupAfterTabFragment", unTodayMemberList.toString())
-//
-//                                    //어댑터에 데이터 넣기
-//                                    setGroupCertiedAdapter(todayMemberList!!)
-//                                    setGroupCertiAdapter(unTodayMemberList!!)
-//
-//                                    group_name.setText(it.data.group_name)
-//                                    left_count.setText(it.data.left_count.toString())
-
                                 } ?: showError(response.errorBody())
                         }
                     })
