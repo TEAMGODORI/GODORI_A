@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.godori.R
 import com.example.godori.data.ResponseGroupAfterTab
+import com.makeramen.roundedimageview.RoundedImageView
 
 class GroupAlreadyCertiAdapter(
     val group: ResponseGroupAfterTab?,
@@ -25,6 +27,7 @@ class GroupAlreadyCertiAdapter(
         var name: TextView = itemView.findViewById(R.id.gr_tv_already_name)
         var count: TextView = itemView.findViewById(R.id.gr_tv_already_count)
         var totalCount: TextView = itemView.findViewById(R.id.gr_tv_already_total_count)
+        var userImg : RoundedImageView = itemView.findViewById(R.id.gr_iv_more_title)
     }
 
 
@@ -45,6 +48,24 @@ class GroupAlreadyCertiAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
+
+        val userImgUrl: String = unTodayMemberList?.get(position)!!.user_img
+
+        if (userImgUrl.length > 0) {
+            Glide.with(holder.userImg.context)
+                .load(userImgUrl)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.userImg)
+
+        } else {
+            Glide.with(holder.userImg.context)
+                .load(R.drawable.gr_img_profile_basic)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.userImg)
+        }
         holder.name.setText(unTodayMemberList!![position].user_name)
         holder.count.setText(unTodayMemberList[position].week_count.toString())
         holder.totalCount.setText("/" + group!!.data.group_cycle.toString())

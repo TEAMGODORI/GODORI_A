@@ -2,8 +2,8 @@ package com.example.godori.fragment
 
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
@@ -21,6 +21,7 @@ import com.example.godori.activity.CertifTabUpload1Activity
 import com.example.godori.adapter.CertifDateAdapter
 import com.example.godori.data.ResponseCertiTab
 import com.prolificinteractive.materialcalendarview.*
+import com.prolificinteractive.materialcalendarview.spans.DotSpan
 import kotlinx.android.synthetic.main.activity_certif_tab_upload1.*
 import kotlinx.android.synthetic.main.activity_certif_tab_upload4.*
 import kotlinx.android.synthetic.main.fragment_certif_tab.*
@@ -81,7 +82,11 @@ class CertifTabFragment : Fragment() {
         materialCalendarView.addDecorators(
             SundayDecorator(),
             SaturdayDecorator(),
-            OneDayDecorator(materialCalendarView)
+            OneDayDecorator(materialCalendarView),
+            EventDecorator(
+                Color.RED,
+                Collections.singleton(CalendarDay.today())
+            )
         )
 
         //오늘 날짜에 색칠
@@ -158,6 +163,17 @@ class CertifTabFragment : Fragment() {
         }
     }
 
+    class EventDecorator(private val color: Int, dates: Collection<CalendarDay>) : DayViewDecorator {
+        private val dates: HashSet<CalendarDay> = HashSet(dates)
+        override fun shouldDecorate(day: CalendarDay): Boolean {
+            return dates.contains(day)
+        }
+
+        override fun decorate(view: DayViewFacade) {
+            view.addSpan(DotSpan(5F, color))
+        }
+
+    }
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

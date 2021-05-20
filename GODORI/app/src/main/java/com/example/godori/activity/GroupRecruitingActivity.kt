@@ -113,6 +113,9 @@ class GroupRecruitingActivity : AppCompatActivity() {
                         mAdapter.notifyDataSetChanged()
                         gr_rcv_recruiting_info.setHasFixedSize(true)
 
+                        //user Name 바꾸기
+                        gr_user.setText(it.data.user.name)
+
                         //recruit에 Group 데이터 넣기
                         gr_tv_recruiting_groupNum.setText(it.data.group_list.size.toString() + "건")
 

@@ -30,12 +30,26 @@
                 android:gravity="center" />
 
             <TextView
-                android:id="@+id/tvGroupRecruitingTitle"
+                android:id="@+id/gr_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="76dp"
                 android:includeFontPadding="false"
-                android:text="도리 님의 운동 취향"
+                android:text="도리"
+                android:letterSpacing="-0.02"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvGroupRecruitingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:layout_toRightOf="@+id/gr_user"
+                android:includeFontPadding="false"
+                android:text=" 님의 운동 취향"
                 android:letterSpacing="-0.02"
                 android:fontFamily="@font/notosanskr_bold"
                 android:textColor="@color/white"
