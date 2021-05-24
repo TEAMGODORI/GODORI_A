@@ -321,6 +321,7 @@
                     android:layout_marginRight="8dp"
                     android:background="@drawable/taste_ly_btn_exercise"
                     android:button="@null"
+                    android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
                     android:paddingHorizontal="40dp"

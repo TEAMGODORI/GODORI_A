@@ -48,6 +48,24 @@ class GroupTodayCertiAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
+        val userImgUrl: String = todayMemberList?.get(position)!!.user_img
+
+        if (userImgUrl.length > 0) {
+            Glide.with(holder.userImg.context)
+                .load(userImgUrl)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.userImg)
+
+        } else {
+            Glide.with(holder.userImg.context)
+                .load(R.drawable.gr_img_profile_basic)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.userImg)
+        }
+
         holder.name.setText(todayMemberList!![position].user_name)
         holder.count.setText(todayMemberList[position].week_count.toString())
         holder.totalCount.setText("/" + group!!.data.group_cycle.toString())
