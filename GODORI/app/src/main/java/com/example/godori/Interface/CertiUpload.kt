@@ -6,9 +6,9 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface CertiUpload {
-    @POST("/certi/{userName}")
+    @POST("/certi/{kakaoId}")
     fun postCertiUpload(
-        @Path("userName") userName: String,
+        @Path("kakaoId") kakaoId: Long,
         @Body body: RequestCertiUpload
     ): Call<ResponseCertiUpload>
 }

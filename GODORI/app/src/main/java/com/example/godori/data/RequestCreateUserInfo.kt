@@ -1,7 +1,7 @@
 package com.example.godori.data
 
 data class RequestCreateUserInfo(
-    val kakao_id: Int,
+    val kakao_id: Long,
     val name: String,
     val nickname: String,
     val profile_img: String,

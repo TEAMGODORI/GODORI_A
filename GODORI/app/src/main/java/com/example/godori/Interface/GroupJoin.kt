@@ -7,9 +7,9 @@ import retrofit2.http.*
 
 interface GroupJoin {
     @Headers("Content-Type:application/json")
-    @POST("/group/join/{userName}")
+    @POST("/group/join/{kakaoId}")
     fun requestList(
-        @Path("userName") userName: String,
+        @Path("kakaoId") kakaoId: Long,
         @Query ("groupId") groupId: Int
     ) : Call<ResponseGroupCreationData>
 }

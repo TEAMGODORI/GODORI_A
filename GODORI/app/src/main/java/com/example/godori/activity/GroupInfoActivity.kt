@@ -14,8 +14,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.annotation.GlideModule
 import com.example.godori.GroupRetrofitServiceImpl
 import com.example.godori.R
+import com.example.godori.data.RequestTasteSetting
 import com.example.godori.data.ResponseGroupCreationData
 import com.example.godori.data.ResponseGroupInfo
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_group_creation_complete.*
 import kotlinx.android.synthetic.main.activity_group_info.*
 import okhttp3.ResponseBody
@@ -47,32 +49,47 @@ class GroupInfoActivity : AppCompatActivity() {
 
         // 참여하기 버튼
         gr_btn_join_recruiting.setOnClickListener {
-            val call: Call<ResponseGroupCreationData> =
-                GroupRetrofitServiceImpl.service_gr_join.requestList(
-                    userName = "김지현", // 수정하기
-                    groupId = group_id
-                )
-            call.enqueue(object : Callback<ResponseGroupCreationData> {
-                override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
-                    // 통신 실패 로직
-                }
 
-                @SuppressLint("SetTextI18n")
-                override fun onResponse(
-                    call: Call<ResponseGroupCreationData>,
-                    response: Response<ResponseGroupCreationData>
-                ) {
-                    response.takeIf { it.isSuccessful }
-                        ?.body()
-                        ?.let { it ->
-                            // 이전 뷰 스택 다 지우고 TabBar 액티비티로 돌아가기
-                            val intent = Intent(application, TabBarActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-
-                            startActivity(intent)
-                        } ?: showError(response.errorBody())
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("LoginActivity", "토큰 정보 보기 실패")
                 }
-            })
+                else if (tokenInfo != null) {
+                    Log.d(
+                        "LoginActivity", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}" +
+                                "\n만료시간: ${tokenInfo.expiresIn} 초"
+                    )
+
+                    val call: Call<ResponseGroupCreationData> =
+                        GroupRetrofitServiceImpl.service_gr_join.requestList(
+                            kakaoId = tokenInfo.id, // 수정하기
+                            groupId = group_id
+                        )
+                    call.enqueue(object : Callback<ResponseGroupCreationData> {
+                        override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
+                            // 통신 실패 로직
+                        }
+
+                        @SuppressLint("SetTextI18n")
+                        override fun onResponse(
+                            call: Call<ResponseGroupCreationData>,
+                            response: Response<ResponseGroupCreationData>
+                        ) {
+                            response.takeIf { it.isSuccessful }
+                                ?.body()
+                                ?.let { it ->
+                                    // 이전 뷰 스택 다 지우고 TabBar 액티비티로 돌아가기
+                                    val intent = Intent(application, TabBarActivity::class.java)
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
+                                    startActivity(intent)
+                                } ?: showError(response.errorBody())
+                        }
+                    })
+                }
+            }
+
         }
 
         //group_id로 그룹 정보 가져오기

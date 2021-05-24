@@ -16,6 +16,7 @@ import com.example.godori.data.ResponseGroupCreationData
 import com.example.godori.data.ResponseGroupInfoAfter
 import com.example.godori.fragment.GroupInfo1Flagment
 import com.example.godori.fragment.GroupInfo2Fragment
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_group_info.*
 import kotlinx.android.synthetic.main.activity_group_info_after.*
 import kotlinx.android.synthetic.main.fragment_group_info1.*
@@ -66,34 +67,49 @@ class GroupInfoAfterActivity : AppCompatActivity() {
 
         // 그룹 탈퇴하기
         gr_btn_exit.setOnClickListener {
-            // 1. 그룹 탈퇴 api 호출
-            val call: Call<ResponseGroupCreationData> =
-                GroupRetrofitServiceImpl.service_gr_exit.requestList(
-                    userName = "김지현" // 수정하기
-                )
-            call.enqueue(object : Callback<ResponseGroupCreationData> {
-                override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
-                    // 통신 실패 로직
+
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("LoginActivity", "토큰 정보 보기 실패")
                 }
+                else if (tokenInfo != null) {
+                    Log.d(
+                        "LoginActivity", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}" +
+                                "\n만료시간: ${tokenInfo.expiresIn} 초"
+                    )
 
-                @SuppressLint("SetTextI18n")
-                override fun onResponse(
-                    call: Call<ResponseGroupCreationData>,
-                    response: Response<ResponseGroupCreationData>
-                ) {
-                    response.takeIf { it.isSuccessful }
-                        ?.body()
-                        ?.let { it ->
-                            // do something
+                    // 1. 그룹 탈퇴 api 호출
+                    val call: Call<ResponseGroupCreationData> =
+                        GroupRetrofitServiceImpl.service_gr_exit.requestList(
+                            kakaoId = tokenInfo.id // 수정하기
+                        )
+                    call.enqueue(object : Callback<ResponseGroupCreationData> {
+                        override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
+                            // 통신 실패 로직
+                        }
 
-                        } ?: showError(response.errorBody())
+                        @SuppressLint("SetTextI18n")
+                        override fun onResponse(
+                            call: Call<ResponseGroupCreationData>,
+                            response: Response<ResponseGroupCreationData>
+                        ) {
+                            response.takeIf { it.isSuccessful }
+                                ?.body()
+                                ?.let { it ->
+                                    // do something
+
+                                } ?: showError(response.errorBody())
+                        }
+                    })
+
+                    // 2. 가입전 메인 화면으로
+                    val intent = Intent(application, TabBarActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(intent)
                 }
-            })
+            }
 
-            // 2. 가입전 메인 화면으로
-            val intent = Intent(application, TabBarActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
         }
 
         //group_id로 그룹 정보 가져오기 GroupInfo1Fragment

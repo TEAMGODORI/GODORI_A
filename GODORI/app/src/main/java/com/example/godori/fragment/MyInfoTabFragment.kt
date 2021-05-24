@@ -19,6 +19,8 @@ import com.example.godori.adapter.GroupInfoMemberAdapter
 import com.example.godori.adapter.MyInfoPictureAdapter
 import com.example.godori.data.ResponseGroupInfoAfter
 import com.example.godori.data.ResponseMypage
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_on_boarding1.*
 import kotlinx.android.synthetic.main.fragment_group_info2.*
 import kotlinx.android.synthetic.main.fragment_my_info_tab.*
@@ -33,6 +35,8 @@ class MyInfoTabFragment : Fragment() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
+    var kakaoId:Long = 0
+
     var certiList: List<ResponseMypage.Data.Certi>? = null
 
     override fun onCreateView(
@@ -43,8 +47,25 @@ class MyInfoTabFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_my_info_tab, container, false)
 
-        // 마이페이지 서버 연결
-        loadData()
+        // 카카오톡 ID
+        var keyHash = activity?.let { Utility.getKeyHash(it) }
+        if (keyHash != null) {
+            Log.d("KEY_HASH", keyHash)
+        }
+
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("MyInfoFragment_KAKAOID", "토큰 정보 보기 실패")
+            }
+            else if (tokenInfo != null) {
+                Log.d("MyInfoFragment_KAKAOID", "토큰 정보 보기 성공" +
+                        "\n회원번호: ${tokenInfo.id}")
+                kakaoId = tokenInfo.id
+
+                // 마이페이지 서버 연결
+                loadData()
+            }
+        }
 
         return view
     }
@@ -82,7 +103,7 @@ class MyInfoTabFragment : Fragment() {
         //Callback 등록하여 통신 요청
         val call: Call<ResponseMypage> =
             GroupRetrofitServiceImpl.service_mypage.requestList(
-                userName = "김지현" //수정하기
+                kakaoId = kakaoId //수정하기
             )
         call.enqueue(object : Callback<ResponseMypage> {
             override fun onFailure(call: Call<ResponseMypage>, t: Throwable) {

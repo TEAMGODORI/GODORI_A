@@ -8,8 +8,8 @@ import retrofit2.http.Headers
 import retrofit2.http.Path
 
 interface MyPage {
-    @GET("/mypage/{userName}")
+    @GET("/mypage/{kakaoId}")
     fun requestList(
-        @Path("userName") userName: String
+        @Path("kakaoId") kakaoId: Long
     ) : Call<ResponseMypage>
 }
