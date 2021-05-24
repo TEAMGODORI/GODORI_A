@@ -20,6 +20,8 @@ import com.example.godori.R
 import com.example.godori.adapter.GroupRecruitingInfoAdapter
 import com.example.godori.adapter.MyInfoPictureAdapter
 import com.example.godori.data.ResponseGroupRecruit
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_group_recruiting.*
 import kotlinx.android.synthetic.main.fragment_my_info_tab.*
 import okhttp3.ResponseBody
@@ -67,14 +69,31 @@ class GroupRecruitingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        loadData()
+        // 카카오 아이디 가져오기
+        //카카오톡 로그인 해시키
+        var keyHash = Utility.getKeyHash(this)
+        Log.d("KEY_HASH", keyHash)
+
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("OnBoading3_KAKAOID", "토큰 정보 보기 실패")
+            }
+            else if (tokenInfo != null) {
+                Log.d("OnBoading3_KAKAOID", "토큰 정보 보기 성공" +
+                        "\n회원번호: ${tokenInfo.id}" )
+
+                loadData(tokenInfo.id)
+            }
+        }
+
+
     }
 
-    private fun loadData() {
+    private fun loadData(kakaoId: Long) {
         //Callback 등록하여 통신 요청
         val call: Call<ResponseGroupRecruit> =
             GroupRetrofitServiceImpl.service_gr_recruit.requestList(
-                userName = "김지현" //수정하기
+                kakaoId = kakaoId //수정하기
             )
         call.enqueue(object : Callback<ResponseGroupRecruit> {
             override fun onFailure(call: Call<ResponseGroupRecruit>, t: Throwable) {
@@ -112,6 +131,9 @@ class GroupRecruitingActivity : AppCompatActivity() {
                         }
                         mAdapter.notifyDataSetChanged()
                         gr_rcv_recruiting_info.setHasFixedSize(true)
+
+                        //user Name 바꾸기
+                        gr_user.setText(it.data.user.name)
 
                         //recruit에 Group 데이터 넣기
                         gr_tv_recruiting_groupNum.setText(it.data.group_list.size.toString() + "건")

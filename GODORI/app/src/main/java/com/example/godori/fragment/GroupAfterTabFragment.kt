@@ -17,6 +17,8 @@ import com.example.godori.activity.GroupInfoAfterActivity
 import com.example.godori.adapter.GroupAlreadyCertiAdapter
 import com.example.godori.adapter.GroupTodayCertiAdapter
 import com.example.godori.data.ResponseGroupAfterTab
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_group_recruiting.*
 import kotlinx.android.synthetic.main.fragment_group_after_tab.*
 import kotlinx.android.synthetic.main.fragment_group_tab.*
@@ -106,15 +108,31 @@ class GroupAfterTabFragment : Fragment() {
             adapter = viewAdapter
         }
 
-        loadData()
 
+        //카카오톡 로그인 해시키
+        var keyHash = activity?.let { Utility.getKeyHash(it) }
+        if (keyHash != null) {
+            Log.d("KEY_HASH", keyHash)
+        }
+
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("After_KAKAOID", "토큰 정보 보기 실패")
+            }
+            else if (tokenInfo != null) {
+                Log.d("After_KAKAOID", "토큰 정보 보기 성공" +
+                        "\n회원번호: ${tokenInfo.id}" )
+
+                loadData(tokenInfo.id)
+            }
+        }
     }
 
-    private fun loadData() {
+    private fun loadData(kakaoId: Long) {
         //Callback 등록하여 통신 요청
         val call: Call<ResponseGroupAfterTab> =
             GroupRetrofitServiceImpl.service_gr_after.requestList(
-                kakaoId = 1111111111 //수정하기
+                kakaoId = kakaoId //수정하기
             )
         call.enqueue(object : Callback<ResponseGroupAfterTab> {
             override fun onFailure(call: Call<ResponseGroupAfterTab>, t: Throwable) {

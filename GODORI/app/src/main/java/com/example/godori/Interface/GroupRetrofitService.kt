@@ -10,8 +10,8 @@ import retrofit2.http.Path
 // POST 방식으로 데이터를 주고 받을 때 넘기는 변수는 Field라고 해야한다.
 interface GroupRetrofitService {
     @Headers("Content-Type:application/json")
-    @GET("/group/list/{userName}")
+    @GET("/group/list/{kakaoId}")
     fun requestList(
-        @Path("userName") userName: String
+        @Path("kakaoId") kakaoId: Long
     ) : Call<ResponseGroupRecruit>
 }

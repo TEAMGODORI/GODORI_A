@@ -7,9 +7,9 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface CertifDetail {
-    @GET("/certi/detail/{userName}")
+    @GET("/certi/detail/{kakaoId}")
     fun requestList(
-        @Path("userName") userName: String,
+        @Path("kakaoId") kakaoId: Long,
         @Query("certiId") certiId: Int
     ) : Call<ResponseCertiDetail>
 }

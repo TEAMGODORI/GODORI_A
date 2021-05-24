@@ -9,8 +9,8 @@ import retrofit2.http.Path
 
 interface GroupExit {
     @Headers("Content-Type:application/json")
-    @PUT("/group/{userName}")
+    @PUT("/group/{kakaoId}")
     fun requestList(
-        @Path("userName") userName: String
+        @Path("kakaoId") kakaoId: Long
     ) : Call<ResponseGroupCreationData>
 }

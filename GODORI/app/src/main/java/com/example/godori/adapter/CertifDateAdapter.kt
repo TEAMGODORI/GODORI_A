@@ -68,12 +68,14 @@ class CertifDateAdapter(
         if (userImgUrl.length > 0) {
             Glide.with(holder.userImg.context)
                 .load(userImgUrl)
+                .circleCrop()
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.userImg)
 
         } else {
             Glide.with(holder.userImg.context)
                 .load(R.drawable.gr_img_profile_basic)
+                .circleCrop()
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.userImg)
         }

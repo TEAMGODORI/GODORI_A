@@ -8,9 +8,9 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface TasteSetting {
-    @PUT("/user/{userName}")
+    @PUT("/user/{kakaoId}")
     fun taste(
-        @Path ("userName") userName: String,
+        @Path ("kakaoId") kakaoId: Long,
         @Body body: RequestTasteSetting
     ): Call<ResponseGroupCreationData>
 }

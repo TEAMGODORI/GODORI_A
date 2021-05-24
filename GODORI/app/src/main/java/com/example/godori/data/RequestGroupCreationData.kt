@@ -10,5 +10,5 @@ data class RequestGroupCreationData(
     val ex_cycle: Int,
     val ex_intensity: String,
     val group_sport: String,
-    val group_maker: String
+    val kakao_id: Long
 )
