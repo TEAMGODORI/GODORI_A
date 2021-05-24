@@ -11,6 +11,7 @@ import com.example.godori.data.RequestCreateUserInfo
 import com.example.godori.data.RequestGroupCreationData
 import com.example.godori.data.ResponseCreateUserInfo
 import com.example.godori.data.ResponseGroupCreationData
+import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_on_boarding3.*
 import okhttp3.ResponseBody
@@ -22,6 +23,8 @@ import retrofit2.Response
 class OnBoarding3Activity : AppCompatActivity() {
 
     var data: ResponseCreateUserInfo? = null
+
+    var kakaoId:Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +40,16 @@ class OnBoarding3Activity : AppCompatActivity() {
 
         btn3.setOnClickListener {
 
+            // 카카오 아이디 가져오기
+            kakaoID()
+
             // 사용자 정보 요청 (기본)
             UserApiClient.instance.me { user, error ->
                 //서버 연동
                 val call: Call<ResponseCreateUserInfo> =
                     GroupRetrofitServiceImpl.service_ob_user_creation.requestList(
                         RequestCreateUserInfo(
-                            kakao_id = user?.id!!,
+                            kakao_id = kakaoId,
                             name = user?.kakaoAccount?.profile?.nickname!!,
                             nickname = appNickname,
                             profile_img = user?.kakaoAccount?.profile?.profileImageUrl!!,
@@ -76,7 +82,11 @@ class OnBoarding3Activity : AppCompatActivity() {
                                 intent.putExtra("profile_image_url", user?.kakaoAccount?.profile?.profileImageUrl!!)
 
                                 // 탭바 액티비티 불러오기
-                                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                intent.putExtra("kakaoId", user?.id)
+                                Log.v("kakaoId",user?.id.toString())
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                startActivity(intent)
 
                                 Log.v("group_creation", "성공!")
                             } ?: showError(response.errorBody())
@@ -90,5 +100,25 @@ class OnBoarding3Activity : AppCompatActivity() {
         val e = error ?: return
         val ob = JSONObject(e.string())
         Toast.makeText(this, ob.getString("message"), Toast.LENGTH_SHORT).show()
+    }
+
+    // 카카오 아이디
+    private fun kakaoID(){
+        //카카오톡 로그인 해시키
+        var keyHash = Utility.getKeyHash(this)
+        Log.d("KEY_HASH", keyHash)
+
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("OnBoading3_KAKAOID", "토큰 정보 보기 실패")
+            }
+            else if (tokenInfo != null) {
+                Log.d("OnBoading3_KAKAOID", "토큰 정보 보기 성공" +
+                        "\n회원번호: ${tokenInfo.id}" )
+
+                kakaoId = tokenInfo.id
+
+            }
+        }
     }
 }

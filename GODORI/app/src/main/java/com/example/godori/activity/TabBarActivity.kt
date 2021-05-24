@@ -10,6 +10,8 @@ import com.example.godori.GroupRetrofitServiceImpl
 import com.example.godori.R
 import com.example.godori.adapter.TabBarViewPagerAdapter
 import com.example.godori.data.ResponseGroupAfterTab
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_tab_bar.*
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -26,12 +28,23 @@ class TabBarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_bar)
 
-        //LoginActivity에서 kakaoId 받기
-        val secondIntent = intent
-        var kakaoId = secondIntent.getLongExtra("kakaoId", 1111111111)
-        Log.d("TabBarActivity", kakaoId.toString())
 
-        loadData(kakaoId)
+        //카카오톡 로그인 해시키
+        var keyHash = Utility.getKeyHash(this)
+        Log.d("KEY_HASH", keyHash)
+
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("TabBar_KAKAOID", "토큰 정보 보기 실패")
+            }
+            else if (tokenInfo != null) {
+                Log.d("TabBar_KAKAOID", "토큰 정보 보기 성공" +
+                        "\n회원번호: ${tokenInfo.id}" )
+
+                loadData(tokenInfo.id)
+            }
+        }
+
         tabbar_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}
             override fun onPageScrolled(
@@ -83,6 +96,7 @@ class TabBarActivity : AppCompatActivity() {
                     ?.body()
                     ?.let { it ->
                         // do something
+                        Log.v("kakaoId-tabbar-loaddata", kakaoId.toString())
                         var group = it.data.group_id
                         // 뷰 페이저 세팅
                         Log.v("group_string", group.toString())

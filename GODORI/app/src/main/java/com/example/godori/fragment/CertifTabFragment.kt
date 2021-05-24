@@ -20,6 +20,8 @@ import com.example.godori.activity.CertifTabDetailActivity
 import com.example.godori.activity.CertifTabUpload1Activity
 import com.example.godori.adapter.CertifDateAdapter
 import com.example.godori.data.ResponseCertiTab
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 import com.prolificinteractive.materialcalendarview.*
 import com.prolificinteractive.materialcalendarview.spans.DotSpan
 import kotlinx.android.synthetic.main.activity_certif_tab_upload1.*
@@ -59,6 +61,8 @@ class CertifTabFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
+
+    var kakaoId:Long = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,10 +115,28 @@ class CertifTabFragment : Fragment() {
             //서버에 보낼 형식
             serverDate = dateFormat.format(date.date)
 
-            load(serverDate)
+            // 카카오톡 ID
+            var keyHash = activity?.let { Utility.getKeyHash(it) }
+            if (keyHash != null) {
+                Log.d("KEY_HASH", keyHash)
+            }
+
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("CertiFragment_KAKAOID", "토큰 정보 보기 실패")
+                }
+                else if (tokenInfo != null) {
+                    Log.d("CertiFragment_KAKAOID", "토큰 정보 보기 성공" +
+                            "\n회원번호: ${tokenInfo.id}")
+                    kakaoId = tokenInfo.id
+
+                    // 마지막에 데이터 로드
+                    load(serverDate)
+                }
+            }
         }
 
-        load(serverDate)
+//        load(serverDate)
 
         return view
     }
@@ -216,7 +238,7 @@ class CertifTabFragment : Fragment() {
         //Callback 등록하여 통신 요청
         val call: Call<ResponseCertiTab> =
             GroupRetrofitServiceImpl.service_ct_tab.requestList(
-                userName = "김지현",
+                kakaoId = kakaoId,
                 date = serverDate //처음 date에 오늘 날짜
             )
         Log.d("changeServerDate", serverDate)
@@ -265,5 +287,9 @@ class CertifTabFragment : Fragment() {
         }
         mAdapter.notifyDataSetChanged()
         certifRecycler.setHasFixedSize(true)
+    }
+
+    private fun dateDataLoad(){
+
     }
 }

@@ -26,6 +26,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+    var kakaoId:Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -43,8 +44,12 @@ class LoginActivity : AppCompatActivity() {
                         "\n회원번호: ${tokenInfo.id}" +
                         "\n만료시간: ${tokenInfo.expiresIn} 초")
 
+
                 val intent = Intent(this, TabBarActivity::class.java)
-                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                kakaoId = tokenInfo.id
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
         }
 
@@ -96,10 +101,27 @@ class LoginActivity : AppCompatActivity() {
                         "썸네일 링크: ${user?.kakaoAccount?.profile?.thumbnailImageUrl}"
                     )
 
+                    //카카오톡 로그인 해시키
+                    var keyHash = Utility.getKeyHash(this)
+                    Log.d("KEY_HASH", keyHash)
+
+                    UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                        if (error != null) {
+                            Log.d("LoginActivity", "토큰 정보 보기 실패")
+                        }
+                        else if (tokenInfo != null) {
+                            Log.d("LoginActivity", "토큰 정보 보기 성공" +
+                                    "\n회원번호: ${tokenInfo.id}" +
+                                    "\n만료시간: ${tokenInfo.expiresIn} 초")
+
+                            kakaoId = tokenInfo.id
+                        }
+                    }
+
                     //서버 연동하기 - Callback 등록하여 통신 요청
                     val call: Call<ResponseFirstLogin> =
                         GroupRetrofitServiceImpl.service_lg_first.requestList(
-                            kakaoId = user?.id!!
+                            kakaoId = kakaoId
                         )
                     call.enqueue(object : Callback<ResponseFirstLogin> {
                         override fun onFailure(call: Call<ResponseFirstLogin>, t: Throwable) {
@@ -131,7 +153,7 @@ class LoginActivity : AppCompatActivity() {
                                                 "profileImageUrl",
                                                 user?.kakaoAccount?.profile?.profileImageUrl
                                             )
-                                            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                            startActivity(intent)
                                         }
                                         else -> {
                                             //첫 로그인이 아닐때
@@ -139,8 +161,9 @@ class LoginActivity : AppCompatActivity() {
                                                 this@LoginActivity,
                                                 TabBarActivity::class.java
                                             )
-                                            intent.putExtra("kakaoId", data!!.data)
-                                            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                            startActivity(intent)
                                         }
                                     }
                                 } ?: showError(response.errorBody())

@@ -27,13 +27,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/notosanskr_bold"
+                android:fontFamily="@font/notosanskr_medium"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:letterSpacing="-0.02"
                 android:text="운동 취향 고르기"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
@@ -46,9 +46,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                android:fontFamily="@font/notosanskr_medium"
+                android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
-                android:letterSpacing="-0.02"
+                android:letterSpacing="-0.05"
                 android:text="일주일에 몇 번\n운동할건가요?"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -63,9 +63,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle1"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
+                    android:textSize="14sp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -75,10 +76,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle2"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -88,10 +89,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle3"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -101,10 +102,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle4"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -114,10 +115,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle5"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -127,10 +128,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle6"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -140,10 +141,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle7"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -163,9 +164,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:fontFamily="@font/notosanskr_medium"
+                android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
-                android:letterSpacing="-0.02"
+                android:letterSpacing="-0.05"
                 android:text="운동 강도는\n어느정도 인가요?"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -185,7 +186,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/taste_ly_btn_level"
                     android:button="@null"
-                    android:fontFamily="@font/notosanskr_medium"
+                    android:fontFamily="@font/notosanskr_bold"
                     android:gravity="center"
                     android:letterSpacing="-0.02"
                     android:text="상"
@@ -200,7 +201,7 @@
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_level"
                     android:button="@null"
-                    android:fontFamily="@font/notosanskr_medium"
+                    android:fontFamily="@font/notosanskr_bold"
                     android:gravity="center"
                     android:letterSpacing="-0.02"
                     android:text="중"
@@ -215,7 +216,7 @@
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_level"
                     android:button="@null"
-                    android:fontFamily="@font/notosanskr_medium"
+                    android:fontFamily="@font/notosanskr_bold"
                     android:gravity="center"
                     android:letterSpacing="-0.02"
                     android:text="하"
@@ -231,11 +232,11 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="68dp"
                 android:layout_marginTop="36dp"
-                android:fontFamily="@font/notosanskr_medium"
+                android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
-                android:letterSpacing="-0.02"
+                android:letterSpacing="-0.05"
                 android:text="내가 좋아하는 종목을\n선택해 주세요!"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -249,12 +250,12 @@
                 android:fontFamily="@font/notosanskr_medium"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:letterSpacing="-0.02"
+                android:letterSpacing="-0.03"
                 android:paddingHorizontal="18dp"
                 android:paddingVertical="5dp"
                 android:text="중복 선택도 가능해요"
                 android:textColor="#6280f2"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -286,7 +287,7 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="30dp"
+                    android:paddingHorizontal="32dp"
                     android:paddingVertical="18dp"
                     android:text="요가/필테"
                     android:textColor="#494949" />
@@ -300,7 +301,7 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="35dp"
+                    android:paddingHorizontal="42dp"
                     android:paddingVertical="18dp"
                     android:text="등산"
                     android:textColor="#494949" />
@@ -323,7 +324,7 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="34dp"
+                    android:paddingHorizontal="40dp"
                     android:paddingVertical="18dp"
                     android:text="자전거"
                     android:textColor="#494949" />
@@ -368,10 +369,11 @@
                 android:background="@drawable/gr_ly_btn_next"
                 android:enabled="false"
                 android:gravity="center"
+                android:letterSpacing="-0.02"
                 android:includeFontPadding="false"
                 android:text="완료"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 

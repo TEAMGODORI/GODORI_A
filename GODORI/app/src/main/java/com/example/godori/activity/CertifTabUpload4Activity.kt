@@ -21,6 +21,7 @@ import com.example.godori.data.RequestCertiUpload
 import com.example.godori.data.ResponseCertiUpload
 import com.example.godori.data.ResponseGroupCreationData
 import com.example.godori.fragment.CertifTabFragment
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_certif_tab_upload4.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -106,64 +107,77 @@ class CertifTabUpload4Activity : AppCompatActivity() {
                 photoBody
             )
 
-            // 3. 인증 업로드 POST
-            val call: Call<ResponseCertiUpload> =
-                GroupRetrofitServiceImpl.service_ct_upload.postCertiUpload(
-                    "김지현",
-                    RequestCertiUpload(
-                        ex_time = ex_time,
-                        ex_intensity = ex_intensity,
-                        ex_evalu = ex_evalu,
-                        certi_sport = certi_sport,
-                        ex_comment = ex_comment
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("CertiUpload4_KAKAOID", "토큰 정보 보기 실패")
+                } else if (tokenInfo != null) {
+                    Log.d(
+                        "CertiUpload4_KAKAOID", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}" +
+                                "\n만료시간: ${tokenInfo.expiresIn} 초"
                     )
-                )
-            call.enqueue(object : Callback<ResponseCertiUpload> {
-                override fun onFailure(call: Call<ResponseCertiUpload>, t: Throwable) {
-                    // 통신 실패 로직
-                    Log.d("업로드 실패 : ", t.message.toString())
+                    // 3. 인증 업로드 POST
+                    val call: Call<ResponseCertiUpload> =
+                        GroupRetrofitServiceImpl.service_ct_upload.postCertiUpload(
+                            kakaoId = tokenInfo.id,
+                            body = RequestCertiUpload(
+                                ex_time = ex_time,
+                                ex_intensity = ex_intensity,
+                                ex_evalu = ex_evalu,
+                                certi_sport = certi_sport,
+                                ex_comment = ex_comment
+                            )
+                        )
+                    call.enqueue(object : Callback<ResponseCertiUpload> {
+                        override fun onFailure(call: Call<ResponseCertiUpload>, t: Throwable) {
+                            // 통신 실패 로직
+                            Log.d("업로드 실패 : ", t.message.toString())
+                        }
+
+                        override fun onResponse(
+                            call: Call<ResponseCertiUpload>,
+                            response: Response<ResponseCertiUpload>
+                        ) {
+                            response.takeIf { it.isSuccessful }
+                                ?.body()
+                                ?.let { it ->
+                                    Log.d("업로드 성공 : ", response.body().toString())
+
+                                    // 4. 업로드 성공하면 -> 이미지 업로드
+                                    val call: Call<ResponseGroupCreationData> =
+                                        GroupRetrofitServiceImpl.service_ct_upload_image.postCertiUpload(
+                                            it.data,
+                                            images = part
+                                        )
+                                    call.enqueue(object : Callback<ResponseGroupCreationData> {
+                                        override fun onFailure(
+                                            call: Call<ResponseGroupCreationData>,
+                                            t: Throwable
+                                        ) {
+                                            // 통신 실패 로직
+                                            Log.d("업로드 실패 : ", t.message.toString())
+                                        }
+
+                                        override fun onResponse(
+                                            call: Call<ResponseGroupCreationData>,
+                                            response: Response<ResponseGroupCreationData>
+                                        ) {
+                                            response.takeIf { it.isSuccessful }
+                                                ?.body()
+                                                ?.let { it ->
+                                                    Log.d(
+                                                        "사진 업로드 성공 : ",
+                                                        response.body().toString()
+                                                    )
+                                                } ?: showError(response.errorBody())
+                                        }
+                                    })
+                                } ?: showError(response.errorBody())
+                        }
+                    })
                 }
+            }
 
-                override fun onResponse(
-                    call: Call<ResponseCertiUpload>,
-                    response: Response<ResponseCertiUpload>
-                ) {
-                    response.takeIf { it.isSuccessful }
-                        ?.body()
-                        ?.let { it ->
-                            Log.d("업로드 성공 : ", response.body().toString())
-
-                            // 4. 업로드 성공하면 -> 이미지 업로드
-                            val call: Call<ResponseGroupCreationData> =
-                                GroupRetrofitServiceImpl.service_ct_upload_image.postCertiUpload(
-                                    it.data,
-                                    images = part
-                                )
-                            call.enqueue(object : Callback<ResponseGroupCreationData> {
-                                override fun onFailure(
-                                    call: Call<ResponseGroupCreationData>,
-                                    t: Throwable
-                                ) {
-                                    // 통신 실패 로직
-                                    Log.d("업로드 실패 : ", t.message.toString())
-                                }
-
-                                override fun onResponse(
-                                    call: Call<ResponseGroupCreationData>,
-                                    response: Response<ResponseGroupCreationData>
-                                ) {
-                                    response.takeIf { it.isSuccessful }
-                                        ?.body()
-                                        ?.let { it ->
-                                            Log.d("사진 업로드 성공 : ", response.body().toString())
-                                        } ?: showError(response.errorBody())
-                                }
-                            })
-
-                        } ?: showError(response.errorBody())
-                }
-
-            })
             // 5. 이전 뷰 스택 다 지우고 TabBar 액티비티로 돌아가기
             val intent = Intent(application, TabBarActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

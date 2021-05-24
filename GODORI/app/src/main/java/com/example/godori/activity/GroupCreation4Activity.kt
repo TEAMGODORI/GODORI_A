@@ -10,6 +10,7 @@ import com.example.godori.R
 import com.example.godori.data.RequestGroupCreationData
 import com.example.godori.data.ResponseCertiTab
 import com.example.godori.data.ResponseGroupCreationData
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_certif_tab_detail.*
 import kotlinx.android.synthetic.main.activity_group_creation4.*
 import okhttp3.ResponseBody
@@ -30,7 +31,7 @@ class GroupCreation4Activity : AppCompatActivity() {
     var ex_cycle: Int = 0
     var ex_intensity: String = ""
     var group_sport: String = ""
-    var group_maker: String = "김지현"
+    var kakao_id: Long = 0
 
     var data: ResponseGroupCreationData? = null
 
@@ -113,56 +114,85 @@ class GroupCreation4Activity : AppCompatActivity() {
             is_public = secondIntent.getBooleanExtra("is_public", false)
             intro_comment = secondIntent.getStringExtra("intro_comment").toString()
 
-
-            // 2. 그룹 생성하기 POST
-            val call: Call<ResponseGroupCreationData> =
-                GroupRetrofitServiceImpl.service_gr_creation.postGroupCreation(
-                    RequestGroupCreationData(
-                        group_name = group_name,
-                        recruit_num = recruit_num,
-                        is_public = is_public,
-                        intro_comment = intro_comment,
-                        ex_cycle = ex_cycle,
-                        ex_intensity = ex_intensity,
-                        group_sport = group_sport,
-                        group_maker = group_maker
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("GroupCreation4_KAKAOID", "토큰 정보 보기 실패")
+                } else if (tokenInfo != null) {
+                    Log.d(
+                        "GroupCreation4_KAKAOID", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}" +
+                                "\n만료시간: ${tokenInfo.expiresIn} 초"
                     )
-                )
-            call.enqueue(object : Callback<ResponseGroupCreationData> {
-                override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
-                    // 통신 실패 로직
+
+                    // 2. 그룹 생성하기 POST
+                    val call: Call<ResponseGroupCreationData> =
+                        GroupRetrofitServiceImpl.service_gr_creation.postGroupCreation(
+                            RequestGroupCreationData(
+                                group_name = group_name,
+                                recruit_num = recruit_num,
+                                is_public = is_public,
+                                intro_comment = intro_comment,
+                                ex_cycle = ex_cycle,
+                                ex_intensity = ex_intensity,
+                                group_sport = group_sport,
+                                kakao_id = tokenInfo.id
+                            )
+                        )
+                    call.enqueue(object : Callback<ResponseGroupCreationData> {
+                        override fun onFailure(
+                            call: Call<ResponseGroupCreationData>,
+                            t: Throwable
+                        ) {
+                            // 통신 실패 로직
+                        }
+
+                        override fun onResponse(
+                            call: Call<ResponseGroupCreationData>,
+                            response: Response<ResponseGroupCreationData>
+                        ) {
+                            response.takeIf { it.isSuccessful }
+                                ?.body()
+                                ?.let { it ->
+                                    data = response.body()
+                                    val group_image = data!!.data
+                                    //3-1. 데이터 이미지 string 넘기기
+                                    val intent = Intent(
+                                        this@GroupCreation4Activity,
+                                        GroupCreationCompleteActivity::class.java
+                                    )
+                                    intent.putExtra("group_image", group_image)
+                                    Log.d("4Activity", group_image)
+
+                                    // 3-2. 데이터 전달 하기
+                                    intent.putExtra(
+                                        "group_name",
+                                        secondIntent.getStringExtra("group_name")
+                                    )
+                                    intent.putExtra(
+                                        "recruit_num",
+                                        secondIntent.getIntExtra("recruit_num", 0)
+                                    )
+                                    intent.putExtra(
+                                        "is_public",
+                                        secondIntent.getBooleanExtra("is_public", false)
+                                    )
+                                    intent.putExtra(
+                                        "intro_comment",
+                                        secondIntent.getStringExtra("intro_comment")
+                                    )
+                                    intent.putExtra("ex_cycle", ex_cycle)
+                                    intent.putExtra("ex_intensity", ex_intensity)
+                                    intent.putExtra("group_sport", group_sport)
+
+                                    // 4. 다음 액티비티 불러오기
+                                    startActivity(intent)
+
+                                    Log.v("group_creation", "성공!")
+                                } ?: showError(response.errorBody())
+                        }
+                    })
                 }
-
-                override fun onResponse(
-                    call: Call<ResponseGroupCreationData>,
-                    response: Response<ResponseGroupCreationData>
-                ) {
-                    response.takeIf { it.isSuccessful }
-                        ?.body()
-                        ?.let { it ->
-                            data = response.body()
-                            val group_image = data!!.data
-                            //3-1. 데이터 이미지 string 넘기기
-                            val intent = Intent(this@GroupCreation4Activity, GroupCreationCompleteActivity::class.java)
-                            intent.putExtra("group_image", group_image)
-                            Log.d("4Activity", group_image)
-
-                            // 3-2. 데이터 전달 하기
-                            intent.putExtra("group_name", secondIntent.getStringExtra("group_name"))
-                            intent.putExtra("recruit_num", secondIntent.getIntExtra("recruit_num", 0))
-                            intent.putExtra("is_public", secondIntent.getBooleanExtra("is_public", false))
-                            intent.putExtra("intro_comment", secondIntent.getStringExtra("intro_comment"))
-                            intent.putExtra("ex_cycle", ex_cycle)
-                            intent.putExtra("ex_intensity", ex_intensity)
-                            intent.putExtra("group_sport", group_sport)
-
-                            // 4. 다음 액티비티 불러오기
-                            startActivity(intent)
-
-                            Log.v("group_creation", "성공!")
-                        } ?: showError(response.errorBody())
-                }
-            })
+            }
         }
     }
 

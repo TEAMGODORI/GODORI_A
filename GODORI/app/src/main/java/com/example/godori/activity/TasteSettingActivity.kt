@@ -10,6 +10,8 @@ import com.example.godori.R
 import com.example.godori.data.RequestGroupCreationData
 import com.example.godori.data.RequestTasteSetting
 import com.example.godori.data.ResponseGroupCreationData
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_group_creation4.*
 import kotlinx.android.synthetic.main.activity_group_creation4.gr_btn_creation4_next
 import kotlinx.android.synthetic.main.activity_group_creation4.gr_cb_creation4_exercise1
@@ -35,34 +37,52 @@ class TasteSettingActivity : AppCompatActivity() {
         // 다음
         taste_btn_complete.setOnClickListener {
 
-            val call: Call<ResponseGroupCreationData> =
-                GroupRetrofitServiceImpl.service_taste.taste(
-                    "김지현",
-                    RequestTasteSetting(
-                        ex_cycle = ex_cycle,
-                        ex_intensity = ex_intensity,
-                        sports = sports
-                    )
-                )
-            call.enqueue(object : Callback<ResponseGroupCreationData> {
-                override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
-                    // 통신 실패 로직
-                }
+            //카카오톡 로그인 해시키
+            var keyHash = Utility.getKeyHash(this)
+            Log.d("KEY_HASH", keyHash)
 
-                override fun onResponse(
-                    call: Call<ResponseGroupCreationData>,
-                    response: Response<ResponseGroupCreationData>
-                ) {
-                    response.takeIf { it.isSuccessful }
-                        ?.body()
-                        ?.let { it ->
-                            Log.d("test", response.body().toString())
-
-                            // 전 페이지로 이동
-                            onBackPressed()
-                        } ?: showError(response.errorBody())
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("LoginActivity", "토큰 정보 보기 실패")
                 }
-            })
+                else if (tokenInfo != null) {
+                    Log.d("LoginActivity", "토큰 정보 보기 성공" +
+                            "\n회원번호: ${tokenInfo.id}" +
+                            "\n만료시간: ${tokenInfo.expiresIn} 초")
+
+                    val call: Call<ResponseGroupCreationData> =
+                        GroupRetrofitServiceImpl.service_taste.taste(
+                            kakaoId = tokenInfo.id,
+                            body = RequestTasteSetting(
+                                ex_cycle = ex_cycle,
+                                ex_intensity = ex_intensity,
+                                sports = sports
+                            )
+                        )
+                    call.enqueue(object : Callback<ResponseGroupCreationData> {
+                        override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
+                            // 통신 실패 로직
+                        }
+
+                        override fun onResponse(
+                            call: Call<ResponseGroupCreationData>,
+                            response: Response<ResponseGroupCreationData>
+                        ) {
+                            response.takeIf { it.isSuccessful }
+                                ?.body()
+                                ?.let { it ->
+                                    Log.d("test", response.body().toString())
+
+                                    // GroupRecruitingActivity로 이동
+//                            onBackPressed()
+                                    val intent = Intent(this@TasteSettingActivity, GroupRecruitingActivity::class.java)
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                    startActivity(intent)
+                                } ?: showError(response.errorBody())
+                        }
+                    })
+                }
+            }
         }
 
         // 이전

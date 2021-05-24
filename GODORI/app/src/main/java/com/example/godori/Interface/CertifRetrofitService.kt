@@ -7,9 +7,9 @@ import retrofit2.http.*
 
 // 서버에서 호출할 메서드를 선언하는 인터페이스
 interface CertifRetrofitService {
-    @GET("/certi/{userName}")
+    @GET("/certi/{kakaoId}")
     fun requestList(
-        @Path("userName") userName: String,
+        @Path("kakaoId") kakaoId: Long,
         @Query("date") date: String
     ) : Call<ResponseCertiTab>
 }

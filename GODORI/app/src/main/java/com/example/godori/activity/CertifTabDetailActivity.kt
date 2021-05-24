@@ -13,6 +13,7 @@ import com.example.godori.GroupRetrofitServiceImpl
 import com.example.godori.R
 import com.example.godori.data.ResponseCertiDetail
 import com.example.godori.data.ResponseGroupCreationData
+import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_certif_tab_detail.*
 import kotlinx.android.synthetic.main.activity_group_info.*
 import kotlinx.android.synthetic.main.activity_group_recruiting.*
@@ -51,60 +52,79 @@ class CertifTabDetailActivity : AppCompatActivity() {
                     ((Integer.parseInt((text_heart_num.text).toString()) - 1).toString())
             }
 
-            // 2. 서버 연동
-            val call: Call<ResponseGroupCreationData> =
-                GroupRetrofitServiceImpl.service_ct_like.requestList(
-                    userName = "김지현",
-                    certiId = certiImgId
-                )
-            call.enqueue(object : Callback<ResponseGroupCreationData> {
-                override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
-                    // 통신 실패 로직
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    Log.d("CertiLike_KAKAOID", "토큰 정보 보기 실패")
+                } else if (tokenInfo != null) {
+                    Log.d(
+                        "CertiLike_KAKAOID", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}" +
+                                "\n만료시간: ${tokenInfo.expiresIn} 초"
+                    )
+                    // 2. 서버 연동
+                    val call: Call<ResponseGroupCreationData> =
+                        GroupRetrofitServiceImpl.service_ct_like.requestList(
+                            kakaoId = tokenInfo.id,
+                            certiId = certiImgId
+                        )
+                    call.enqueue(object : Callback<ResponseGroupCreationData> {
+                        override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
+                            // 통신 실패 로직
+                        }
+
+                        @SuppressLint("SetTextI18n")
+                        override fun onResponse(
+                            call: Call<ResponseGroupCreationData>,
+                            response: Response<ResponseGroupCreationData>
+                        ) {
+                            response.takeIf { it.isSuccessful }
+                                ?.body()
+                                ?.let { it ->
+
+                                    Log.v("좋아요", it.message.toString())
+
+                                } ?: showError(response.errorBody())
+                        }
+                    })
                 }
-
-                @SuppressLint("SetTextI18n")
-                override fun onResponse(
-                    call: Call<ResponseGroupCreationData>,
-                    response: Response<ResponseGroupCreationData>
-                ) {
-                    response.takeIf { it.isSuccessful }
-                        ?.body()
-                        ?.let { it ->
-
-                            Log.v("좋아요", it.message.toString())
-
-                        } ?: showError(response.errorBody())
-                }
-            })
-
+            }
         }
     }
 
     private fun loadData(certiImgId: Int) {
-        //group_id로 그룹 정보 가져오기
-        val call: Call<ResponseCertiDetail> =
-            GroupRetrofitServiceImpl.service_ct_detail.requestList(
-                userName = "김지현",
-                certiId = certiImgId // 수정하기
-            )
-        call.enqueue(object : Callback<ResponseCertiDetail> {
-            override fun onFailure(call: Call<ResponseCertiDetail>, t: Throwable) {
-                // 통신 실패 로직
-            }
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("CertiDetail_KAKAOID", "토큰 정보 보기 실패")
+            } else if (tokenInfo != null) {
+                Log.d(
+                    "CertiDetail_KAKAOID", "토큰 정보 보기 성공" +
+                            "\n회원번호: ${tokenInfo.id}" +
+                            "\n만료시간: ${tokenInfo.expiresIn} 초"
+                )
+                //group_id로 그룹 정보 가져오기
+                val call: Call<ResponseCertiDetail> =
+                    GroupRetrofitServiceImpl.service_ct_detail.requestList(
+                        kakaoId = tokenInfo.id,
+                        certiId = certiImgId // 수정하기
+                    )
+                call.enqueue(object : Callback<ResponseCertiDetail> {
+                    override fun onFailure(call: Call<ResponseCertiDetail>, t: Throwable) {
+                        // 통신 실패 로직
+                    }
 
-            @SuppressLint("SetTextI18n", "SimpleDateFormat")
-            override fun onResponse(
-                call: Call<ResponseCertiDetail>,
-                response: Response<ResponseCertiDetail>
-            ) {
-                response.takeIf { it.isSuccessful }
-                    ?.body()
-                    ?.let { it ->
-                        // do something
-                        data = response.body()?.data
-                        Log.d("GroupRecruitingActivity", data.toString())
+                    @SuppressLint("SetTextI18n", "SimpleDateFormat")
+                    override fun onResponse(
+                        call: Call<ResponseCertiDetail>,
+                        response: Response<ResponseCertiDetail>
+                    ) {
+                        response.takeIf { it.isSuccessful }
+                            ?.body()
+                            ?.let { it ->
+                                // do something
+                                data = response.body()?.data
+                                Log.d("GroupRecruitingActivity", data.toString())
 
-                        my_tv_userName.text = data?.user_name
+                                my_tv_userName.text = data?.user_name
 //                        my_iv_profile.setImageURI(data?.user_image?.toUri())
 
                         // 좋아요 갯수
@@ -169,8 +189,9 @@ class CertifTabDetailActivity : AppCompatActivity() {
                         reviews.text = data?.ex_evalu
                         comment.text = data?.ex_comment
                     } ?: showError(response.errorBody())
+                })
             }
-        })
+        }
     }
 
     private fun showError(error: ResponseBody?) {
