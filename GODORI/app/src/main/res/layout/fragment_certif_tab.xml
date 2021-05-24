@@ -66,14 +66,14 @@
                     android:background="@color/white"
                     android:descendantFocusability="blocksDescendants"
                     android:includeFontPadding="false"
-                    app:mcv_dateTextAppearance="@style/calDateViewFontStyle"
                     app:mcv_headerTextAppearance="@style/calHeaderViewFontStyle"
+                    app:mcv_weekDayTextAppearance="@style/customTextViewFontStyle"
+                    app:mcv_dateTextAppearance="@style/calDateViewFontStyle"
                     app:mcv_leftArrowMask="@drawable/certif_left_arrow"
                     app:mcv_rightArrowMask="@drawable/certif_right_arrow"
                     app:mcv_selectionColor="#668bef"
                     app:mcv_showOtherDates="other_months"
-                    app:mcv_tileSize="54dp"
-                    app:mcv_weekDayTextAppearance="@style/customTextViewFontStyle"
+                    app:mcv_tileSize="56dp"
                     tools:ignore="MissingConstraints" />
             <View
                 android:layout_width="match_parent"

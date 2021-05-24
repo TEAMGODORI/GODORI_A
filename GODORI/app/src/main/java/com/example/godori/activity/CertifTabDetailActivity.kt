@@ -134,6 +134,21 @@ class CertifTabDetailActivity : AppCompatActivity() {
                                 .into(certiImg)
                         }
 
+                        val profileUrl: String = data!!.user_image
+
+                        if(profileUrl.length > 0) {
+                            Glide.with(this@CertifTabDetailActivity)
+                                .load(certiImgUrl)
+                                .error(android.R.drawable.stat_notify_error)
+                                .into(my_iv_profile)
+
+                        } else {
+                            Glide.with(this@CertifTabDetailActivity)
+                                .load(R.drawable.gr_img_profile_basic)
+                                .error(android.R.drawable.stat_notify_error)
+                                .into(my_iv_profile)
+                        }
+
                         time_exercise.setText(data?.ex_time)
 
                         val sportList = it.data.sports.split(",")

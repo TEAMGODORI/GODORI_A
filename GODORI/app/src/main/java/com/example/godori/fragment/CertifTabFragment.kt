@@ -35,6 +35,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.Calendar.getInstance
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -79,15 +80,21 @@ class CertifTabFragment : Fragment() {
             .setCalendarDisplayMode(CalendarMode.WEEKS)
             .commit()
 
+        val formatter = SimpleDateFormat("yyyy-M-dd")
+        val date = formatter.parse("2021-5-20")
+        val cal = Calendar.getInstance()
+        cal.time = date
+
         materialCalendarView.addDecorators(
             SundayDecorator(),
             SaturdayDecorator(),
             OneDayDecorator(materialCalendarView),
             EventDecorator(
                 Color.RED,
-                Collections.singleton(CalendarDay.today())
+                Collections.singleton(cal.time)
             )
         )
+
 
         //오늘 날짜에 색칠
         materialCalendarView.setDateSelected(Calendar.getInstance(), true)
@@ -170,7 +177,7 @@ class CertifTabFragment : Fragment() {
         }
 
         override fun decorate(view: DayViewFacade) {
-            view.addSpan(DotSpan(5F, color))
+            view.addSpan(DotSpan(8F, color))
         }
 
     }
