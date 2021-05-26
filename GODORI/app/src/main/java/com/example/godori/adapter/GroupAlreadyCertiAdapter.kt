@@ -49,23 +49,23 @@ class GroupAlreadyCertiAdapter(
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-//
-//        val userImgUrl: String = unTodayMemberList?.get(position)!!.user_img
-//
-//        if (userImgUrl.length > 0) {
-//            Glide.with(holder.userImg.context)
-//                .load(userImgUrl)
-//                .circleCrop()
-//                .error(android.R.drawable.stat_notify_error)
-//                .into(holder.userImg)
-//
-//        } else {
-//            Glide.with(holder.userImg.context)
-//                .load(R.drawable.gr_img_profile_basic)
-//                .circleCrop()
-//                .error(android.R.drawable.stat_notify_error)
-//                .into(holder.userImg)
-//        }
+
+        val userImgUrl: String = unTodayMemberList?.get(position)!!.user_img
+
+        if (userImgUrl.length > 0) {
+            Glide.with(holder.userImg.context)
+                .load(userImgUrl)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.userImg)
+
+        } else {
+            Glide.with(holder.userImg.context)
+                .load(R.drawable.gr_img_profile_basic)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.userImg)
+        }
         holder.name.setText(unTodayMemberList!![position].user_name)
         holder.count.setText(unTodayMemberList[position].week_count.toString())
         holder.totalCount.setText("/" + group!!.data.group_cycle.toString())
