@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GODORI"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.OnBoarding3Activity"></activity>
+        <activity android:name=".activity.LoginMainActivity"></activity>
+        <activity android:name=".activity.OnBoarding3Activity" />
         <activity android:name=".activity.OnBoarding2Activity" />
         <activity android:name=".activity.OnBoarding1Activity" />
         <activity android:name=".activity.GroupInfoAfterActivity" />
@@ -30,11 +31,9 @@
         <activity android:name=".activity.GroupCreation3Activity" />
         <activity android:name=".activity.GroupCreation2Activity" />
         <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.Information2Activity" />
         <activity android:name=".activity.Information1Activity" />
         <activity android:name=".activity.GroupProdCompleActivity" />
-        <activity android:name=".activity.GroupJoinCompleteActivity" />
         <activity android:name=".activity.GroupCreationCompleteActivity" />
         <activity android:name=".activity.GroupCreation1Activity" />
         <activity android:name=".activity.GroupInfoActivity" />

@@ -68,7 +68,10 @@ class CertifTabDetailActivity : AppCompatActivity() {
                             certiId = certiImgId
                         )
                     call.enqueue(object : Callback<ResponseGroupCreationData> {
-                        override fun onFailure(call: Call<ResponseGroupCreationData>, t: Throwable) {
+                        override fun onFailure(
+                            call: Call<ResponseGroupCreationData>,
+                            t: Throwable
+                        ) {
                             // 통신 실패 로직
                         }
 
@@ -127,68 +130,69 @@ class CertifTabDetailActivity : AppCompatActivity() {
                                 my_tv_userName.text = data?.user_name
 //                        my_iv_profile.setImageURI(data?.user_image?.toUri())
 
-                        // 좋아요 갯수
-                        text_heart_num.text = data?.like_count.toString()
+                                // 좋아요 갯수
+                                text_heart_num.text = data?.like_count.toString()
 
-                        // 좋아요 눌린 상태면 채운 하트
-                        when (data?.is_liked) {
-                            true -> {
-                                btn_heart.isChecked = true
-                                text_heart_num.setTextColor(Color.parseColor("#61cbf1"))
-                            }
-                            else -> btn_heart.isChecked = false
-                        }
+                                // 좋아요 눌린 상태면 채운 하트
+                                when (data?.is_liked) {
+                                    true -> {
+                                        btn_heart.isChecked = true
+                                        text_heart_num.setTextColor(Color.parseColor("#61cbf1"))
+                                    }
+                                    else -> btn_heart.isChecked = false
+                                }
 
-                        val certiImgUrl: String = data!!.certi_images
+                                val certiImgUrl: String = data!!.certi_images
 
-                        if (certiImgUrl.length > 0) {
-                            Glide.with(this@CertifTabDetailActivity)
-                                .load(certiImgUrl)
-                                .error(android.R.drawable.stat_notify_error)
-                                .into(certiImg)
+                                if (certiImgUrl.length > 0) {
+                                    Glide.with(this@CertifTabDetailActivity)
+                                        .load(certiImgUrl)
+                                        .error(android.R.drawable.stat_notify_error)
+                                        .into(certiImg)
 
-                        } else {
-                            Glide.with(this@CertifTabDetailActivity)
-                                .load(R.drawable.certif_un)
-                                .error(android.R.drawable.stat_notify_error)
-                                .into(certiImg)
-                        }
+                                } else {
+                                    Glide.with(this@CertifTabDetailActivity)
+                                        .load(R.drawable.certif_un)
+                                        .error(android.R.drawable.stat_notify_error)
+                                        .into(certiImg)
+                                }
 
-                        val profileUrl: String = data!!.user_image
+                                val profileUrl: String = data!!.user_image
 
-                        if(profileUrl.length > 0) {
-                            Glide.with(this@CertifTabDetailActivity)
-                                .load(certiImgUrl)
-                                .error(android.R.drawable.stat_notify_error)
-                                .into(my_iv_profile)
+                                if (profileUrl.length > 0) {
+                                    Glide.with(this@CertifTabDetailActivity)
+                                        .load(certiImgUrl)
+                                        .error(android.R.drawable.stat_notify_error)
+                                        .into(my_iv_profile)
 
-                        } else {
-                            Glide.with(this@CertifTabDetailActivity)
-                                .load(R.drawable.gr_img_profile_basic)
-                                .error(android.R.drawable.stat_notify_error)
-                                .into(my_iv_profile)
-                        }
+                                } else {
+                                    Glide.with(this@CertifTabDetailActivity)
+                                        .load(R.drawable.gr_img_profile_basic)
+                                        .error(android.R.drawable.stat_notify_error)
+                                        .into(my_iv_profile)
+                                }
 
-                        time_exercise.setText(data?.ex_time)
+                                time_exercise.setText(data?.ex_time)
 
-                        val sportList = it.data.sports.split(",")
-                        val textArray = arrayOf<TextView>(
-                            exercise1,
-                            exercise2,
-                            exercise3,
-                            exercise4,
-                            exercise5,
-                            exercise6
-                        )
-                        for (i in sportList.indices) {
-                            textArray[i].setVisibility(View.VISIBLE)
-                            textArray[i].setText(sportList[i])
-                        }
+                                val sportList = it.data.sports.split(",")
+                                val textArray = arrayOf<TextView>(
+                                    exercise1,
+                                    exercise2,
+                                    exercise3,
+                                    exercise4,
+                                    exercise5,
+                                    exercise6
+                                )
+                                for (i in sportList.indices) {
+                                    textArray[i].setVisibility(View.VISIBLE)
+                                    textArray[i].setText(sportList[i])
+                                }
 
-                        intensity.text = data?.ex_intensity
-                        reviews.text = data?.ex_evalu
-                        comment.text = data?.ex_comment
-                    } ?: showError(response.errorBody())
+                                intensity.text = data?.ex_intensity
+                                reviews.text = data?.ex_evalu
+                                comment.text = data?.ex_comment
+                            } ?: showError(response.errorBody())
+                    }
                 })
             }
         }

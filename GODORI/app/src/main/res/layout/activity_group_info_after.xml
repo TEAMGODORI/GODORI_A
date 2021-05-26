@@ -23,7 +23,7 @@
                 android:id="@+id/gr_iv_info_img_after"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/gr_img_info_title" />
 
             <androidx.appcompat.widget.Toolbar

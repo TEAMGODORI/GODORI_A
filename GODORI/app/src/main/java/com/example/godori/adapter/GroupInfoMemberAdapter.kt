@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.godori.R
 import com.example.godori.data.ResponseGroupAfterTab
 import com.example.godori.data.ResponseGroupInfoAfter
@@ -45,8 +46,22 @@ class GroupInfoMemberAdapter(
         // - replace the contents of the view with that element
         holder.name.text= memberList!![position].name
 
-        //사진 미변경
-        holder.profile.setImageResource(R.drawable.gr_img_profile_basic)
+        val userImgUrl: String = memberList?.get(position)!!.profile_img
+
+        if (userImgUrl.length > 0) {
+            Glide.with(holder.profile.context)
+                .load(userImgUrl)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.profile)
+
+        } else {
+            Glide.with(holder.profile.context)
+                .load(R.drawable.gr_img_profile_basic)
+                .circleCrop()
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.profile)
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

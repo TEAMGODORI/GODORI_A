@@ -16,13 +16,13 @@
         <RelativeLayout
             android:id="@+id/gr_ll_info"
             android:layout_width="match_parent"
-            android:layout_height="269dp">
+            android:layout_height="253dp">
 
             <ImageView
                 android:id="@+id/gr_iv_info_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/gr_img_info_title" />
 
             <androidx.appcompat.widget.Toolbar
@@ -396,6 +396,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginHorizontal="18dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/gr_ly_btn_next"
             android:fontFamily="@font/notosanskr_medium"
             android:gravity="center"

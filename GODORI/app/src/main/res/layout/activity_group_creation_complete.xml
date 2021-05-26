@@ -58,7 +58,7 @@
                 android:layout_marginLeft="68dp"
                 android:layout_marginRight="26dp"
                 android:background="@drawable/gr_ly_iv_creation_title"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/gr_img_info_title" />
 
             <ImageView
