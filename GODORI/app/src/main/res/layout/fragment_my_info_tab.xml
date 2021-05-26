@@ -14,8 +14,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="283dp"
-            android:background="@drawable/gr_ly_gradation">
+            android:layout_height="304dp"
+            android:background="@drawable/my_img_gradation">
 
             <ImageButton
                 android:id="@+id/my_btn_setting"
@@ -31,8 +31,8 @@
 
             <ImageView
                 android:id="@+id/my_iv_profile"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/my_ly_iv_profile" />
@@ -57,7 +57,7 @@
                 android:layout_below="@+id/my_tv_userName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="24dp"
-                android:background="#5c6cf3" />
+                android:background="#90a8f4" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="136dp"
+                    android:layout_marginTop="160dp"
                     android:includeFontPadding="false"
                     android:text="이번주 달성률"
                     android:textColor="#99ffffff" />
@@ -93,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
-                android:layout_marginTop="136dp"
+                android:layout_marginTop="160dp"
                 android:layout_toRightOf="@id/my_vw_stroke">
 
                 <TextView
