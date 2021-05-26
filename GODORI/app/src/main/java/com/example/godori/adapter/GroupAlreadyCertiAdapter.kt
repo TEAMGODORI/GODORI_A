@@ -66,6 +66,7 @@ class GroupAlreadyCertiAdapter(
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.userImg)
         }
+
         holder.name.setText(unTodayMemberList!![position].user_name)
         holder.count.setText(unTodayMemberList[position].week_count.toString())
         holder.totalCount.setText("/" + group!!.data.group_cycle.toString())
