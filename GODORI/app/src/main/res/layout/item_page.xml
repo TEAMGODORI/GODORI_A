@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:background="@drawable/lg_background">
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="36dp"
+        android:src="@drawable/lg_img_logo"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="32dp"/>
+
+    <TextView
+        android:id="@+id/lg_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="32dp"
+        android:textSize="27sp"
+        android:textColor="#6f76de"
+        android:lineSpacingExtra="8sp"
+        android:fontFamily="@font/dohyeon"/>
+
+    <TextView
+        android:id="@+id/lg_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lg_title_text"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="32dp"
+        android:textColor="#616161"
+        android:textSize="14sp"
+        android:letterSpacing="-0.02"
+        android:fontFamily="@font/notosanskr_medium"/>
+
+    <ImageView
+        android:id="@+id/lg_img"
+        android:layout_width="412dp"
+        android:layout_height="240dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/lg_img_illust"
+        android:layout_marginTop="340dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"/>
+
+</RelativeLayout>

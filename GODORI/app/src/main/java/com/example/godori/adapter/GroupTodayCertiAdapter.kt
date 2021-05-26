@@ -69,23 +69,6 @@ class GroupTodayCertiAdapter(
         holder.name.setText(todayMemberList!![position].user_name)
         holder.count.setText(todayMemberList[position].week_count.toString())
         holder.totalCount.setText("/" + group!!.data.group_cycle.toString())
-
-        val userImgUrl: String = todayMemberList?.get(position)!!.user_img
-
-        if (userImgUrl.length > 0) {
-            Glide.with(holder.userImg.context)
-                .load(userImgUrl)
-                .circleCrop()
-                .error(android.R.drawable.stat_notify_error)
-                .into(holder.userImg)
-
-        } else {
-            Glide.with(holder.userImg.context)
-                .load(R.drawable.gr_img_profile_basic)
-                .circleCrop()
-                .error(android.R.drawable.stat_notify_error)
-                .into(holder.userImg)
-        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

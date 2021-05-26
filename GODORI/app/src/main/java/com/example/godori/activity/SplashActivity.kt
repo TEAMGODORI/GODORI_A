@@ -10,7 +10,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         try {
             Thread.sleep(2000)
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginMainActivity::class.java)
             startActivity(intent)
             finish()
         }

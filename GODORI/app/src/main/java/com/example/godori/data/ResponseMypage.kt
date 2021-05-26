@@ -23,7 +23,8 @@ data class ResponseMypage(
         )
         data class Certi(
             val id: Int,
-            val image: String
+            val image: String,
+            val created_at: String
         )
     }
 }
