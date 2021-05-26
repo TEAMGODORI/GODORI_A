@@ -6,9 +6,14 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
+import android.transition.Slide
 import android.util.Log
+import android.view.Gravity
+import android.view.Window
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.annotation.GlideModule
@@ -34,7 +39,17 @@ class GroupInfoActivity : AppCompatActivity() {
     var data: ResponseGroupInfo? = null
     var dataD: ResponseGroupInfo.Data? = null
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 슬라이드 효과
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            with(window) {
+                requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+                // set an slide transition
+                enterTransition = Slide(Gravity.END)
+                exitTransition = Slide(Gravity.START)
+            }
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_info)
 

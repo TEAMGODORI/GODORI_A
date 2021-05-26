@@ -5,7 +5,10 @@
     <style name="Theme.GODORI" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue</item> //수정 500
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <!--<item name="colorPrimaryVariant">@color/purple_700</item>-->
+        <!--상태바 투명으로-->
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

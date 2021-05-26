@@ -1,10 +1,16 @@
 package com.example.godori.activity
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.transition.Slide
+import android.view.Gravity
+import android.view.Window
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.godori.R
 
@@ -12,7 +18,18 @@ class GroupCreation2Activity : AppCompatActivity() {
     var recruit_num: Int = 0
     var is_public: Boolean = true
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 슬라이드 효과
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            with(window) {
+                requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+                // set an slide transition
+                enterTransition = Slide(Gravity.END)
+                exitTransition = Slide(Gravity.START)
+            }
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_creation2)
 
@@ -77,7 +94,7 @@ class GroupCreation2Activity : AppCompatActivity() {
                 intent.putExtra("recruit_num", recruit_num)
                 intent.putExtra("is_public", is_public)
                 // 액티비티 시작
-                startActivity(intent)
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
             }
         }
     }

@@ -1,12 +1,15 @@
 package com.example.godori.activity
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
+import androidx.annotation.RequiresApi
 import com.example.godori.*
 import kotlinx.android.synthetic.main.activity_group_creation1.*
 import java.lang.Boolean.TRUE
@@ -15,6 +18,7 @@ class GroupCreation1Activity : AppCompatActivity() {
     // 데이터 목록
     var group_name: String = ""
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_creation1)
@@ -62,7 +66,7 @@ class GroupCreation1Activity : AppCompatActivity() {
             val intent = Intent(this, GroupCreation2Activity::class.java)
             // 데이터 전달
             intent.putExtra("group_name", group_name)
-            startActivity(intent)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
 
 //            }
         }

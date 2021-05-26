@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-    <stroke
-        android:color="@color/white"
-        android:width="2dp"/>
-    <solid
-        android:color="#eceded"/>
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape android:shape="oval">
+        <solid
+            android:color="#eceded"/>
+        <corners android:radius="10dp" />
+        <padding
+            android:bottom="2dp"
+            android:left="2dp"
+            android:right="2dp"
+            android:top="2dp" />
+    </shape>
+</item>
+<item>
+    <shape android:shape="oval">
+        <solid android:color="#eceded" />
+        <corners android:radius="10dp" />
+        <size
+            android:width="70dp"
+            android:height="70dp" />
+    </shape>
+</item>
+</layer-list>
