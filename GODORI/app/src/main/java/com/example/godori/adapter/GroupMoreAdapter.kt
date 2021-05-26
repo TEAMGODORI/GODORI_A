@@ -1,6 +1,7 @@
 package com.example.godori.adapter
 
 import android.content.Context
+import android.graphics.Rect
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,8 +53,6 @@ class GroupMoreAdapter(
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
 
         val groupImgUrl: String? = groupList?.get(position)?.group_image
         holder.groupName.setText(groupList?.get(position)?.group_name)
@@ -94,5 +93,14 @@ class GroupMoreAdapter(
         } else if(groupList!= null && groupList?.size!! >= 6)
             size = 6
         return size
+    }
+}
+
+class HorizontalItemDecorator(private val divHeight : Int) : RecyclerView.ItemDecoration() {
+
+    @Override
+    override fun getItemOffsets(outRect: Rect, view: View, parent : RecyclerView, state : RecyclerView.State) {
+        super.getItemOffsets(outRect, view, parent, state)
+        outRect.right = divHeight
     }
 }

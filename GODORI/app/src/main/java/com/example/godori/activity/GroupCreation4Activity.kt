@@ -1,10 +1,16 @@
 package com.example.godori.activity
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Slide
 import android.util.Log
+import android.view.Gravity
+import android.view.Window
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.godori.GroupRetrofitServiceImpl
 import com.example.godori.R
 import com.example.godori.data.RequestGroupCreationData
@@ -36,6 +42,16 @@ class GroupCreation4Activity : AppCompatActivity() {
     var data: ResponseGroupCreationData? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 슬라이드 효과
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            with(window) {
+                requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+                // set an slide transition
+                enterTransition = Slide(Gravity.END)
+                exitTransition = Slide(Gravity.START)
+            }
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_creation4)
 
@@ -146,6 +162,7 @@ class GroupCreation4Activity : AppCompatActivity() {
                             // 통신 실패 로직
                         }
 
+                        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
                         override fun onResponse(
                             call: Call<ResponseGroupCreationData>,
                             response: Response<ResponseGroupCreationData>
@@ -185,7 +202,7 @@ class GroupCreation4Activity : AppCompatActivity() {
                                     intent.putExtra("group_sport", group_sport)
 
                                     // 4. 다음 액티비티 불러오기
-                                    startActivity(intent)
+                                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this@GroupCreation4Activity).toBundle())
 
                                     Log.v("group_creation", "성공!")
                                 } ?: showError(response.errorBody())

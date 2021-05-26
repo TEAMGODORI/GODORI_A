@@ -4,6 +4,7 @@ import android.Manifest.permission.CAMERA
 import android.Manifest.permission.READ_EXTERNAL_STORAGE
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageInfo
@@ -101,7 +102,7 @@ class CertifTabUpload1Activity : AppCompatActivity() {
             Log.v("certi1", photoURI.toString())
 
             // 액티비티 시작
-            startActivity(intent)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
         //버튼 누르면 촬영하는 부분을 dispatchTakePictureIntent를 불러오게 수정

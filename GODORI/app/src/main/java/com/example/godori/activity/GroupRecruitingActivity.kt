@@ -1,8 +1,10 @@
 package com.example.godori.activity
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
@@ -11,6 +13,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -121,12 +124,13 @@ class GroupRecruitingActivity : AppCompatActivity() {
                         )
                         gr_rcv_recruiting_info.adapter = mAdapter
                         mAdapter.itemClick = object : GroupRecruitingInfoAdapter.ItemClick {
+                            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
                             override fun onClick(view: View, position: Int) {
                                 val groupId = groupList!![position].id
 
                                 val intent = Intent(baseContext, GroupInfoActivity::class.java)
                                 intent.putExtra("groupId", groupId)
-                                startActivity(intent)
+                                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this@GroupRecruitingActivity).toBundle())
                             }
                         }
                         mAdapter.notifyDataSetChanged()

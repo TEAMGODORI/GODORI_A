@@ -27,6 +27,8 @@ class SettingActivity : AppCompatActivity() {
                     Log.d("SettingActivity", "로그아웃 성공")
                 }
                 val intent = Intent(this, LoginActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP))
             }
         }
