@@ -95,7 +95,7 @@ class CertifTabFragment : Fragment() {
             OneDayDecorator(materialCalendarView),
             EventDecorator(
                 Color.RED,
-                Collections.singleton(cal.time)
+                Collections.singleton(CalendarDay.today())
             )
         )
 

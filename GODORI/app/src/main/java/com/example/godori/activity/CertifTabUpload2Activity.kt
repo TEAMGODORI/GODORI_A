@@ -1,17 +1,23 @@
 package com.example.godori.activity
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.transition.Slide
 import android.util.Log
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.godori.R
 import kotlinx.android.synthetic.main.activity_certif_tab_upload2.*
@@ -21,8 +27,19 @@ import java.io.File
 class CertifTabUpload2Activity : AppCompatActivity() {
     var ex_time:String = ""
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 슬라이드 효과
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            with(window) {
+                requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+                // set an slide transition
+                enterTransition = Slide(Gravity.END)
+                exitTransition = Slide(Gravity.START)
+            }
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_certif_tab_upload2)
 
@@ -43,7 +60,7 @@ class CertifTabUpload2Activity : AppCompatActivity() {
 //            var images = secondIntent.getSerializableExtra("images")as File
 
             // 액티비티 시작
-            startActivity(intent)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
         //스피너

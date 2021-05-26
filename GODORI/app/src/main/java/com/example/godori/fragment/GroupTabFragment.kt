@@ -21,6 +21,7 @@ import com.example.godori.activity.GroupSearchActivity
 import com.example.godori.adapter.GroupMoreAdapter
 import com.example.godori.adapter.GroupRecruitingInfoAdapter
 import com.example.godori.adapter.GroupTodayCertiAdapter
+import com.example.godori.adapter.HorizontalItemDecorator
 import com.example.godori.data.ResponseGroupAfterTab
 import com.example.godori.data.ResponseGroupBeforeTab
 import com.example.godori.data.ResponseGroupRecruit
@@ -56,6 +57,8 @@ class GroupTabFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        gr_rcv_main_more.addItemDecoration(HorizontalItemDecorator(28))
 
         // 오늘 날짜
         val cal = Calendar.getInstance()

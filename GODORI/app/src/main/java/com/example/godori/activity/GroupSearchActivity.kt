@@ -1,6 +1,8 @@
 package com.example.godori.activity
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,6 +12,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -112,12 +115,13 @@ class GroupSearchActivity : AppCompatActivity() {
         }
 
         (mAdapter as GroupSearchFileListAdapter).itemClick = object : GroupRecruitingInfoAdapter.ItemClick {
+            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
             override fun onClick(view: View, position: Int) {
                 val groupId = group_list[position].id
 
                 val intent = Intent(baseContext, GroupInfoActivity::class.java)
                 intent.putExtra("groupId", groupId)
-                startActivity(intent)
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this@GroupSearchActivity).toBundle())
             }
         }
     }
