@@ -14,8 +14,6 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.annotation.GlideModule
 import com.example.godori.GroupRetrofitServiceImpl
 import com.example.godori.R
 import com.example.godori.activity.CertifTabDetailActivity
@@ -34,7 +32,6 @@ import kotlinx.android.synthetic.main.fragment_certif_tab.view.*
 import kotlinx.android.synthetic.main.fragment_group_after_tab.*
 import kotlinx.android.synthetic.main.fragment_my_info_tab.*
 import kotlinx.android.synthetic.main.item_certif_tab.*
-import kotlinx.android.synthetic.main.item_certif_tab.my_iv_profile
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -42,7 +39,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.Calendar.getInstance
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -200,17 +196,16 @@ class CertifTabFragment : Fragment() {
             date = CalendarDay.today()
         }
     }
-
-    class EventDecorator(private val color: Int, dates: ArrayList<CalendarDay>) : DayViewDecorator {
-        private val dates: ArrayList<CalendarDay> = dates
+    class EventDecorator(private val color: Int, dates: Collection<CalendarDay>?) :
+        DayViewDecorator {
+        private val dates: HashSet<CalendarDay> = HashSet(dates)
         override fun shouldDecorate(day: CalendarDay): Boolean {
             return dates.contains(day)
         }
 
         override fun decorate(view: DayViewFacade) {
-            view.addSpan(DotSpan(8F, color))
+            view.addSpan(DotSpan(5F, color))
         }
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -307,7 +302,7 @@ class CertifTabFragment : Fragment() {
 
                         when (message) {
                             "마이페이지 정보 불러오기 성공" -> {
-                                for(i in it.data.certi_list.indices){
+                                for (i in it.data.certi_list.indices) {
                                     //날짜 가져오기
                                     var d = it.data.certi_list[i].created_at
                                 }
