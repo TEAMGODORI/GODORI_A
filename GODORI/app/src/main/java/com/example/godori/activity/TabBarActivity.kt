@@ -30,9 +30,6 @@ class TabBarActivity : AppCompatActivity() {
 
 
         //카카오톡 로그인 해시키
-        var keyHash = Utility.getKeyHash(this)
-        Log.d("KEY_HASH", keyHash)
-
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
             if (error != null) {
                 Log.d("TabBar_KAKAOID", "토큰 정보 보기 실패")
@@ -40,7 +37,6 @@ class TabBarActivity : AppCompatActivity() {
             else if (tokenInfo != null) {
                 Log.d("TabBar_KAKAOID", "토큰 정보 보기 성공" +
                         "\n회원번호: ${tokenInfo.id}" )
-
                 loadData(tokenInfo.id)
             }
         }

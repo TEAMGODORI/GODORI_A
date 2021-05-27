@@ -48,11 +48,6 @@ class MyInfoTabFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_my_info_tab, container, false)
 
         // 카카오톡 ID
-        var keyHash = activity?.let { Utility.getKeyHash(it) }
-        if (keyHash != null) {
-            Log.d("KEY_HASH", keyHash)
-        }
-
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
             if (error != null) {
                 Log.d("MyInfoFragment_KAKAOID", "토큰 정보 보기 실패")

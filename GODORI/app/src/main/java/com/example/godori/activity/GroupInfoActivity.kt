@@ -71,9 +71,8 @@ class GroupInfoActivity : AppCompatActivity() {
                 }
                 else if (tokenInfo != null) {
                     Log.d(
-                        "LoginActivity", "토큰 정보 보기 성공" +
-                                "\n회원번호: ${tokenInfo.id}" +
-                                "\n만료시간: ${tokenInfo.expiresIn} 초"
+                        "GroupInfo_KAKAOID", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}"
                     )
 
                     val call: Call<ResponseGroupCreationData> =

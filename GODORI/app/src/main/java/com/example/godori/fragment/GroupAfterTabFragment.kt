@@ -108,13 +108,6 @@ class GroupAfterTabFragment : Fragment() {
             adapter = viewAdapter
         }
 
-
-        //카카오톡 로그인 해시키
-        var keyHash = activity?.let { Utility.getKeyHash(it) }
-        if (keyHash != null) {
-            Log.d("KEY_HASH", keyHash)
-        }
-
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
             if (error != null) {
                 Log.d("After_KAKAOID", "토큰 정보 보기 실패")
