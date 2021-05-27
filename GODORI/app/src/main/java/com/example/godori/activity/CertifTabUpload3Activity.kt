@@ -75,11 +75,11 @@ class CertifTabUpload3Activity : AppCompatActivity() {
             if (isChecked) {
                 when (sports_count) {
                     0 -> {
-                        certi_sport = "필라테스"
+                        certi_sport = "요가/필테"
                         sports_count += 1
                     }
                     else -> {
-                        certi_sport = certi_sport.plus(",필라테스")
+                        certi_sport = certi_sport.plus(",요가/필테")
                     }
                 }
             }
@@ -88,11 +88,11 @@ class CertifTabUpload3Activity : AppCompatActivity() {
             if (isChecked) {
                 when (sports_count) {
                     0 -> {
-                        certi_sport = "요가"
+                        certi_sport = "등산"
                         sports_count += 1
                     }
                     else -> {
-                        certi_sport = certi_sport.plus(",요가")
+                        certi_sport = certi_sport.plus(",등산")
                     }
                 }
             }
