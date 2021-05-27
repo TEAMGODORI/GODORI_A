@@ -96,6 +96,22 @@ class CertifTabFragment : Fragment() {
             OneDayDecorator(materialCalendarView)
         )
 
+        // 카카오톡 ID
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("CertiFragment_KAKAOID", "토큰 정보 보기 실패")
+            } else if (tokenInfo != null) {
+                Log.d(
+                    "CertiFragment_KAKAOID", "토큰 정보 보기 성공" +
+                            "\n회원번호: ${tokenInfo.id}"
+                )
+                kakaoId = tokenInfo.id
+
+                // 데이터 로드
+                load(serverDate)
+            }
+        }
+
 
         //오늘 날짜에 색칠
         materialCalendarView.setDateSelected(Calendar.getInstance(), true)
@@ -125,14 +141,9 @@ class CertifTabFragment : Fragment() {
 
                     // 마지막에 데이터 로드
                     load(serverDate)
-
-                    // 마이페이지 서버 연결
-                    loadData()
                 }
             }
         }
-
-//        load(serverDate)
 
         return view
     }
@@ -264,47 +275,6 @@ class CertifTabFragment : Fragment() {
         })
     }
 
-    private fun loadData() {
-        //Callback 등록하여 통신 요청
-        val call: Call<ResponseMypage> =
-            GroupRetrofitServiceImpl.service_mypage.requestList(
-                kakaoId = kakaoId //수정하기
-            )
-        call.enqueue(object : Callback<ResponseMypage> {
-            override fun onFailure(call: Call<ResponseMypage>, t: Throwable) {
-
-            }
-
-            override fun onResponse(
-                call: Call<ResponseMypage>,
-                response: Response<ResponseMypage>
-            ) {
-                response.takeIf { it.isSuccessful }
-                    ?.body()
-                    ?.let { it ->
-                        // Response 로그
-                        var dataList = response.body()
-                        Log.d("MyInfoTabFragment", dataList.toString())
-
-
-                        // message 확인
-                        var message = it.message
-                        Log.d("Mypage", message)
-
-                        when (message) {
-                            "마이페이지 정보 불러오기 성공" -> {
-                                for (i in it.data.certi_list.indices) {
-                                    //날짜 가져오기
-                                    var d = it.data.certi_list[i].created_at
-                                }
-
-                            }
-                        }
-                    } ?: showError(response.errorBody())
-            }
-        })
-    }
-
     private fun showError(error: ResponseBody?) {
         val e = error ?: return
         val ob = JSONObject(e.string())
@@ -324,9 +294,5 @@ class CertifTabFragment : Fragment() {
         }
         mAdapter.notifyDataSetChanged()
         certifRecycler.setHasFixedSize(true)
-    }
-
-    private fun dateDataLoad() {
-
     }
 }

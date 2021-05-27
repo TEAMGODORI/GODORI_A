@@ -13,10 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/certifImg"
             android:layout_width="170dp"
             android:layout_height="170dp"
+            card_view:riv_corner_radius="8dp"
             android:scaleType="centerCrop"/>
 
         <ImageView
@@ -34,6 +35,8 @@
             android:layout_below="@id/certifImg"
             android:layout_marginLeft="42dp"
             android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:fontFamily="@font/notosanskr_medium"
             android:includeFontPadding="false"
             android:text="사용자명"
             android:textColor="#3c3c3c"

@@ -7,7 +7,6 @@ import android.app.Activity
 import android.app.ActivityOptions
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.net.Uri
@@ -33,8 +32,6 @@ import kotlinx.android.synthetic.main.activity_certif_tab_upload4.*
 import kotlinx.android.synthetic.main.activity_certif_tab_upload4.view.*
 import okhttp3.MultipartBody
 import java.io.*
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -85,12 +82,20 @@ class CertifTabUpload1Activity : AppCompatActivity() {
             // 이미지 파일이 저장
             var bitmap = viewToBitmap(save_img1)
 
+            // 이미지 이름으로 넣을 현재 시간
+            // 날짜 및 시간 형식 지정
+            val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+            // Date 객체 사용
+            val date = Date()
+            val currentTime = simpleDateFormat.format(date)
+
+            Log.v("TimeStamp_Time", "TimeStamp_" + Calendar.getInstance().time.toString())
             val bytes = ByteArrayOutputStream()
             bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
             val path: String = MediaStore.Images.Media.insertImage(
                 contentResolver,
                 bitmap,
-                "TimeStamp",
+                "TimeStamp_$currentTime",
                 null
             )
             val timestampURI = Uri.parse(path)

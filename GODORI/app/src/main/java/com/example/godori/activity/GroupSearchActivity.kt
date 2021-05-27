@@ -114,13 +114,12 @@ class GroupSearchActivity : AppCompatActivity() {
             adapter = mAdapter
         }
 
-        (mAdapter as GroupSearchFileListAdapter).itemClick = object : GroupRecruitingInfoAdapter.ItemClick {
+        (mAdapter as GroupSearchFileListAdapter).itemClick = object : GroupSearchFileListAdapter.ItemClick {
             @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
             override fun onClick(view: View, position: Int) {
-                val groupId = group_list[position].id
 
                 val intent = Intent(baseContext, GroupInfoActivity::class.java)
-                intent.putExtra("groupId", groupId)
+                intent.putExtra("groupId", position)
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this@GroupSearchActivity).toBundle())
             }
         }

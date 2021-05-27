@@ -57,6 +57,8 @@ class GroupInfoActivity : AppCompatActivity() {
         val extras = intent.extras
         group_id = extras!!.getInt("groupId")
 
+        Log.v("INFO_groupId",group_id.toString())
+
         // 이전
         gr_btn_info_back.setOnClickListener {
             onBackPressed()

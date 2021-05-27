@@ -1,30 +1,16 @@
 package com.example.godori.adapter
 
-import android.annotation.SuppressLint
-import android.util.Log
-import android.widget.Toast
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.example.godori.GroupRetrofitServiceImpl
-import com.example.godori.data.ResponseGroupAfterTab
 import com.example.godori.fragment.CertifTabFragment
 import com.example.godori.fragment.GroupAfterTabFragment
 import com.example.godori.fragment.GroupTabFragment
 import com.example.godori.fragment.MyInfoTabFragment
-import kotlinx.coroutines.delay
-
-import okhttp3.ResponseBody
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.lang.Boolean.FALSE
-import java.lang.Boolean.TRUE
 import java.util.*
-import kotlin.concurrent.schedule
 
-class TabBarViewPagerAdapter(fm: FragmentManager, group:Int) :
+class TabBarViewPagerAdapter(fm: FragmentManager, group: Int) :
     FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     var group = group
@@ -36,7 +22,6 @@ class TabBarViewPagerAdapter(fm: FragmentManager, group:Int) :
 
     override fun getItem(position: Int): Fragment {
         return if (group !=0) {
-            Log.v("group_string", group.toString())
             when (position) {
                 0 -> GroupAfterTabFragment()
                 1 -> CertifTabFragment()
