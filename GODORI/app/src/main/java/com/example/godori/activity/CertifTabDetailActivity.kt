@@ -161,13 +161,15 @@ class CertifTabDetailActivity : AppCompatActivity() {
 
                                 if (profileUrl.length > 0) {
                                     Glide.with(this@CertifTabDetailActivity)
-                                        .load(certiImgUrl)
+                                        .load(profileUrl)
+                                        .circleCrop()
                                         .error(android.R.drawable.stat_notify_error)
                                         .into(my_iv_profile)
 
                                 } else {
                                     Glide.with(this@CertifTabDetailActivity)
                                         .load(R.drawable.gr_img_profile_basic)
+                                        .circleCrop()
                                         .error(android.R.drawable.stat_notify_error)
                                         .into(my_iv_profile)
                                 }
