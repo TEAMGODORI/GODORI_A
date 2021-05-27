@@ -142,6 +142,7 @@ class GroupTabFragment : Fragment() {
         Toast.makeText(context, ob.getString("message"), Toast.LENGTH_SHORT).show()
     }
 
+    //이런 그룹 어때요?
     private fun setGroupMoreAdapter(groupList: List<ResponseGroupBeforeTab.Data>) {
         val mAdapter = GroupMoreAdapter(groupList, context)
         gr_rcv_main_more.adapter = mAdapter

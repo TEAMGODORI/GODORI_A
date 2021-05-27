@@ -67,8 +67,6 @@ class GroupSearchFileListAdapter internal constructor(
             private val filterResults = FilterResults()
             override fun performFiltering(constraint: CharSequence): FilterResults {
                 val charString = constraint.toString()
-                Log.v("SEARCH_charString", charString)
-                Log.v("SEARCH_list", list.toString())
                 val filteredList = ArrayList<String>()
                 if (charString.isEmpty()) {
                     searchableList = list as ArrayList<String>
