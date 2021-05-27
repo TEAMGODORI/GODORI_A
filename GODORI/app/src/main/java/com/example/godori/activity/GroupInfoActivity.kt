@@ -58,6 +58,8 @@ class GroupInfoActivity : AppCompatActivity() {
         var group_id: Int = secondIntent.extras!!.getInt("groupId")
         Log.d("GroupInfoActivity", group_id.toString())
 
+        Log.v("INFO_groupId",group_id.toString())
+
         // 이전
         gr_btn_info_back.setOnClickListener {
             onBackPressed()
@@ -72,9 +74,8 @@ class GroupInfoActivity : AppCompatActivity() {
                 }
                 else if (tokenInfo != null) {
                     Log.d(
-                        "LoginActivity", "토큰 정보 보기 성공" +
-                                "\n회원번호: ${tokenInfo.id}" +
-                                "\n만료시간: ${tokenInfo.expiresIn} 초"
+                        "GroupInfo_KAKAOID", "토큰 정보 보기 성공" +
+                                "\n회원번호: ${tokenInfo.id}"
                     )
 
                     val call: Call<ResponseGroupCreationData> =

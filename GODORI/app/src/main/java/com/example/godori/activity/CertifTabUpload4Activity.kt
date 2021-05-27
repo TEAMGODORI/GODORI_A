@@ -194,6 +194,7 @@ class CertifTabUpload4Activity : AppCompatActivity() {
             // 5. 이전 뷰 스택 다 지우고 TabBar 액티비티로 돌아가기
             val intent = Intent(application, TabBarActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.putExtra("certiUpload", true)
 
             // 6. 액티비티 시작
             startActivity(intent)

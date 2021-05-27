@@ -10,7 +10,7 @@ import com.example.godori.GroupRetrofitServiceImpl
 import com.example.godori.R
 import com.example.godori.adapter.TabBarViewPagerAdapter
 import com.example.godori.data.ResponseGroupAfterTab
-import com.kakao.sdk.common.util.Utility
+import com.example.godori.fragment.CertifTabFragment
 import com.kakao.sdk.user.UserApiClient
 import kotlinx.android.synthetic.main.activity_tab_bar.*
 import okhttp3.ResponseBody
@@ -28,19 +28,16 @@ class TabBarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_bar)
 
-
-        //카카오톡 로그인 해시키
-        var keyHash = Utility.getKeyHash(this)
-        Log.d("KEY_HASH", keyHash)
-
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
             if (error != null) {
                 Log.d("TabBar_KAKAOID", "토큰 정보 보기 실패")
             }
             else if (tokenInfo != null) {
-                Log.d("TabBar_KAKAOID", "토큰 정보 보기 성공" +
-                        "\n회원번호: ${tokenInfo.id}" )
-
+                Log.d(
+                    "TabBar_KAKAOID", "토큰 정보 보기 성공" +
+                            "\n회원번호: ${tokenInfo.id}"
+                )
+                // fragment
                 loadData(tokenInfo.id)
             }
         }
@@ -95,14 +92,24 @@ class TabBarActivity : AppCompatActivity() {
                 response.takeIf { it.isSuccessful }
                     ?.body()
                     ?.let { it ->
-                        // do something
                         Log.v("kakaoId-tabbar-loaddata", kakaoId.toString())
+                        // 1. 그룹아이디
                         var group = it.data.group_id
-                        // 뷰 페이저 세팅
+
+                        // 2. 뷰 페이저 세팅
                         Log.v("group_string", group.toString())
                         viewpagerAdapter = TabBarViewPagerAdapter(supportFragmentManager, group)
                         tabbar_viewpager.adapter = viewpagerAdapter
                         Log.v("onResponse", group.toString())
+
+                        // 3. 인증 올렸을 시 인증탭으로
+                        val secondIntent = getIntent()
+                        var certiUpload = secondIntent.getBooleanExtra("certiUpload", false)
+                        if (certiUpload) {
+                            tabbar_viewpager.currentItem = 1;
+                        } else {
+                            tabbar_viewpager.currentItem = 0;
+                        }
                     } ?: showError(response.errorBody())
             }
         })

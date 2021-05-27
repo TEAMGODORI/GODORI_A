@@ -48,8 +48,14 @@ class GroupSearchFileListAdapter internal constructor(
 
         if(itemClick != null)
         {
+            var groupId = 0
+            for (name in list) {
+                if (name.group_name == searchableList[position]) {
+                    groupId = name.id
+                }
+            }
             holder.iconImageView.setOnClickListener { v ->
-                itemClick?.onClick(v, position)
+                itemClick?.onClick(v, groupId)
             }
         }
     }

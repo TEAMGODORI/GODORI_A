@@ -106,7 +106,7 @@
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:letterSpacing="-0.02"
-                        android:text="필라테스/요가"
+                        android:text="요가/필테"
                         android:textColor="@color/ct_text_color"
                         android:textSize="14sp" />
 

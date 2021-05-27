@@ -96,6 +96,22 @@ class CertifTabFragment : Fragment() {
             OneDayDecorator(materialCalendarView)
         )
 
+        // 카카오톡 ID
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                Log.d("CertiFragment_KAKAOID", "토큰 정보 보기 실패")
+            } else if (tokenInfo != null) {
+                Log.d(
+                    "CertiFragment_KAKAOID", "토큰 정보 보기 성공" +
+                            "\n회원번호: ${tokenInfo.id}"
+                )
+                kakaoId = tokenInfo.id
+
+                // 데이터 로드
+                load(serverDate)
+            }
+        }
+
 
         //오늘 날짜에 색칠
         materialCalendarView.setDateSelected(Calendar.getInstance(), true)
@@ -113,11 +129,6 @@ class CertifTabFragment : Fragment() {
             serverDate = dateFormat.format(date.date)
 
             // 카카오톡 ID
-            var keyHash = activity?.let { Utility.getKeyHash(it) }
-            if (keyHash != null) {
-                Log.d("KEY_HASH", keyHash)
-            }
-
             UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
                 if (error != null) {
                     Log.d("CertiFragment_KAKAOID", "토큰 정보 보기 실패")
@@ -130,12 +141,9 @@ class CertifTabFragment : Fragment() {
 
                     // 마지막에 데이터 로드
                     load(serverDate)
-
                 }
             }
         }
-
-//        load(serverDate)
 
         return view
     }
@@ -286,9 +294,5 @@ class CertifTabFragment : Fragment() {
         }
         mAdapter.notifyDataSetChanged()
         certifRecycler.setHasFixedSize(true)
-    }
-
-    private fun dateDataLoad() {
-
     }
 }
