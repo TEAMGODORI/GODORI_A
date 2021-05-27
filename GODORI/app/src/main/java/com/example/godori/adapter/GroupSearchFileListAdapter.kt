@@ -21,7 +21,7 @@ class GroupSearchFileListAdapter internal constructor(
     {
         fun onClick(view: View, position: Int)
     }
-    var itemClick: GroupRecruitingInfoAdapter.ItemClick? = null
+    var itemClick: GroupSearchFileListAdapter.ItemClick? = null
 
     class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.gr_tv_search_result)
@@ -61,7 +61,6 @@ class GroupSearchFileListAdapter internal constructor(
             private val filterResults = FilterResults()
             override fun performFiltering(constraint: CharSequence): FilterResults {
                 val charString = constraint.toString()
-
                 val filteredList = ArrayList<String>()
                 if (charString.isEmpty()) {
                     searchableList = list as ArrayList<String>

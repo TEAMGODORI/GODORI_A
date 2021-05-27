@@ -131,8 +131,6 @@ class CertifTabFragment : Fragment() {
                     // 마지막에 데이터 로드
                     load(serverDate)
 
-                    // 마이페이지 서버 연결
-                    loadData()
                 }
             }
         }
@@ -264,47 +262,6 @@ class CertifTabFragment : Fragment() {
                         //인증한 adapter에 Member 데이터 넣기
                         setCertifAdapter(it.data)
 
-                    } ?: showError(response.errorBody())
-            }
-        })
-    }
-
-    private fun loadData() {
-        //Callback 등록하여 통신 요청
-        val call: Call<ResponseMypage> =
-            GroupRetrofitServiceImpl.service_mypage.requestList(
-                kakaoId = kakaoId //수정하기
-            )
-        call.enqueue(object : Callback<ResponseMypage> {
-            override fun onFailure(call: Call<ResponseMypage>, t: Throwable) {
-
-            }
-
-            override fun onResponse(
-                call: Call<ResponseMypage>,
-                response: Response<ResponseMypage>
-            ) {
-                response.takeIf { it.isSuccessful }
-                    ?.body()
-                    ?.let { it ->
-                        // Response 로그
-                        var dataList = response.body()
-                        Log.d("MyInfoTabFragment", dataList.toString())
-
-
-                        // message 확인
-                        var message = it.message
-                        Log.d("Mypage", message)
-
-                        when (message) {
-                            "마이페이지 정보 불러오기 성공" -> {
-                                for (i in it.data.certi_list.indices) {
-                                    //날짜 가져오기
-                                    var d = it.data.certi_list[i].created_at
-                                }
-
-                            }
-                        }
                     } ?: showError(response.errorBody())
             }
         })

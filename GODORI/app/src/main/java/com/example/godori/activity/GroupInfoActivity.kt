@@ -39,6 +39,7 @@ class GroupInfoActivity : AppCompatActivity() {
     var data: ResponseGroupInfo? = null
     var dataD: ResponseGroupInfo.Data? = null
 
+    @SuppressLint("LongLogTag")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         // 슬라이드 효과
@@ -53,9 +54,9 @@ class GroupInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_info)
 
-        var group_id: Int
-        val extras = intent.extras
-        group_id = extras!!.getInt("groupId")
+        val secondIntent : Intent = intent
+        var group_id: Int = secondIntent.extras!!.getInt("groupId")
+        Log.d("GroupInfoActivity", group_id.toString())
 
         // 이전
         gr_btn_info_back.setOnClickListener {
@@ -107,6 +108,7 @@ class GroupInfoActivity : AppCompatActivity() {
 
         }
 
+        Log.d("GroupInfoActivityGroupInfo", group_id.toString())
         //group_id로 그룹 정보 가져오기
         val call: Call<ResponseGroupInfo> =
             GroupRetrofitServiceImpl.service_gr__info.requestList(
@@ -127,7 +129,7 @@ class GroupInfoActivity : AppCompatActivity() {
                     ?.let { it ->
                         // do something
                         data = response.body()
-                        Log.d("GroupRecruitingActivity", data.toString())
+                        Log.d("GroupInfoActivity", data.toString())
                         dataD = data!!.data
 
                         //group_sport
