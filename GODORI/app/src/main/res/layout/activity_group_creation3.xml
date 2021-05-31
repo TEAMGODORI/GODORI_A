@@ -66,6 +66,7 @@
                     android:layout_width="350dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
+                    android:paddingLeft="2dp"
                     android:letterSpacing="-0.02"
                     android:hint="예시)헬린이들 모여라, 거북목에서 벗어납시다!"
                     android:textColorHint="@color/white"
@@ -87,12 +88,14 @@
             android:id="@+id/gr_btn_creation3_next"
             android:layout_marginHorizontal="32dp"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:background="@drawable/gr_ly_btn_next"
             android:enabled="false"
             android:gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
             android:text="다음"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>

@@ -108,7 +108,7 @@
                 android:letterSpacing="-0.02"
                 android:layout_toRightOf="@id/gr_iv_info_cycle"
                 android:includeFontPadding="false"
-                android:text="운동 주기"
+                android:text="주간 인증"
                 android:textColor="#6280f2" />
 
             <TextView
