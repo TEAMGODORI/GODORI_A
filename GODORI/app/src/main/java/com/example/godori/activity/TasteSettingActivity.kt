@@ -189,11 +189,11 @@ class TasteSettingActivity : AppCompatActivity() {
                 taste_btn_complete.isEnabled = true
                 when (sports_count) {
                     0 -> {
-                        sports = "런닝"
+                        sports = "러닝"
                         sports_count += 1
                     }
                     else -> {
-                        sports = sports.plus(",런닝")
+                        sports = sports.plus(",러닝")
                     }
                 }
             }

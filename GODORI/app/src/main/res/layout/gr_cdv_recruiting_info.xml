@@ -54,12 +54,13 @@
                 android:text="고도리"
                 android:letterSpacing="-0.02"
                 android:fontFamily="@font/notosanskr_bold"
-                android:layout_marginVertical="8dp"
+                android:layout_marginTop="8dp"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/gr_tv_recruiting_info_line"
+                android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/gr_tv_recruiting_info_groupName"
@@ -68,7 +69,7 @@
                 android:fontFamily="@font/notosanskr_medium"
                 android:includeFontPadding="false"
                 android:textColor="#3C3C3C"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/gr_tv_recruiting_info_cycle"

@@ -142,10 +142,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:textSize="16sp"
                 android:textColor="#161c49"
-                android:fontFamily="@font/notosanskr_medium"
+                android:fontFamily="@font/notosanskr_bold"
                 android:text="인증 사진"/>
 
             <androidx.recyclerview.widget.RecyclerView

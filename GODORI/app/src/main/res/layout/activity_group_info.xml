@@ -29,13 +29,12 @@
                 android:id="@+id/btnRecruitingBack"
                 android:layout_width="match_parent"
                 android:layout_height="54dp">
-
                 <ImageButton
                     android:id="@+id/gr_btn_info_back"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:layout_marginLeft="15dp"
-                    android:background="@drawable/gr_btn_back"
+                    android:background="@drawable/gr_btn_back_white"
                     android:gravity="center" />
             </androidx.appcompat.widget.Toolbar>
         </RelativeLayout>
@@ -73,8 +72,7 @@
                 android:letterSpacing="-0.02"
                 android:text="고도리"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="312dp"
@@ -163,8 +161,7 @@
                     android:letterSpacing="-0.02"
                     android:text="그룹 정보"
                     android:textColor="#2c2c2d"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <RelativeLayout
                     android:id="@+id/gr_rl_info_info"

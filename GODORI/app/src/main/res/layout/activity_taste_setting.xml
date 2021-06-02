@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/notosanskr_medium"
+                android:fontFamily="@font/notosanskr_bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:letterSpacing="-0.02"
@@ -39,26 +39,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="22dp"
+            android:layout_marginHorizontal="16dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
                 android:letterSpacing="-0.05"
                 android:text="일주일에 몇 번\n운동할건가요?"
                 android:textColor="#000000"
-                android:textSize="22sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
             <RadioGroup
                 android:id="@+id/taste_rg_cycle"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="32dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -157,26 +157,26 @@
             <View
                 android:layout_width="386dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="41dp"
+                android:layout_marginTop="22dp"
                 android:background="#eff0f0" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="22dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
                 android:letterSpacing="-0.05"
                 android:text="운동 강도는\n어느정도 인가요?"
                 android:textColor="#000000"
-                android:textSize="22sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
             <RadioGroup
                 android:id="@+id/taste_btn_intensity"
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -227,25 +227,24 @@
             <View
                 android:layout_width="386dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="22dp"
                 android:background="#eff0f0" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="68dp"
-                android:layout_marginTop="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
                 android:letterSpacing="-0.05"
                 android:text="내가 좋아하는 종목을\n선택해 주세요!"
                 android:textColor="#000000"
-                android:textSize="22sp"
-                android:textStyle="normal" />
+                android:textSize="16sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/taste_ly_tv_warning"
                 android:fontFamily="@font/notosanskr_medium"
                 android:gravity="center"
@@ -255,53 +254,54 @@
                 android:paddingVertical="5dp"
                 android:text="중복 선택도 가능해요"
                 android:textColor="#6280f2"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/taste_btn_exercise1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="8dp"
                     android:background="@drawable/taste_ly_btn_exercise"
                     android:button="@null"
+                    android:textAlignment="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="42dp"
                     android:paddingVertical="18dp"
                     android:text="헬스"
                     android:textColor="#494949" />
 
                 <CheckBox
                     android:id="@+id/taste_btn_exercise2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:layout_marginRight="8dp"
                     android:background="@drawable/taste_ly_btn_exercise"
                     android:button="@null"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="32dp"
                     android:paddingVertical="18dp"
                     android:text="요가/필테"
                     android:textColor="#494949" />
 
                 <CheckBox
                     android:id="@+id/taste_btn_exercise3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/taste_ly_btn_exercise"
                     android:button="@null"
                     android:gravity="center"
+
+                    android:textAlignment="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="42dp"
                     android:paddingVertical="18dp"
                     android:text="등산"
                     android:textColor="#494949" />
@@ -316,7 +316,7 @@
 
                 <CheckBox
                     android:id="@+id/taste_btn_exercise4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="8dp"
                     android:background="@drawable/taste_ly_btn_exercise"
@@ -324,38 +324,38 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="40dp"
+                    android:textAlignment="center"
                     android:paddingVertical="18dp"
                     android:text="자전거"
                     android:textColor="#494949" />
 
                 <CheckBox
                     android:id="@+id/taste_btn_exercise5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="8dp"
                     android:background="@drawable/taste_ly_btn_exercise"
                     android:button="@null"
                     android:gravity="center"
+                    android:textAlignment="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="42dp"
                     android:paddingVertical="18dp"
                     android:text="수영"
                     android:textColor="#494949" />
 
                 <CheckBox
                     android:id="@+id/taste_btn_exercise6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/taste_ly_btn_exercise"
                     android:button="@null"
+                    android:textAlignment="center"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:paddingHorizontal="42dp"
                     android:paddingVertical="18dp"
-                    android:text="런닝"
+                    android:text="러닝"
                     android:textColor="#494949" />
 
             </LinearLayout>
@@ -364,7 +364,7 @@
                 android:id="@+id/taste_btn_complete"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_marginTop="54dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/gr_ly_btn_next"
                 android:enabled="false"

@@ -104,10 +104,12 @@
                     android:id="@+id/gr_tv_info_after_title_startdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_medium"
                     android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
                     android:text="2021.01.26~"
-                    android:textColor="#979797"
-                    android:textSize="12sp" />
+                    android:textColor="#2c2c2d"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/gr_tv_info_after_title_point"
@@ -115,20 +117,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_toRightOf="@id/gr_tv_info_title_startdate"
+                    android:fontFamily="@font/notosanskr_medium"
                     android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
                     android:text="・"
-                    android:textColor="#979797"
-                    android:textSize="12sp" />
+                    android:textColor="#2c2c2d"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/gr_tv_info_after_group_maker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_toRightOf="@id/gr_tv_info_after_title_point"
+                    android:layout_toRightOf="@id/gr_tv_info_title_point"
+                    android:fontFamily="@font/notosanskr_medium"
                     android:includeFontPadding="false"
+                    android:letterSpacing="-0.02"
                     android:text="벅지니"
-                    android:textColor="#979797"
+                    android:textColor="#2c2c2d"
                     android:textSize="12sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -158,9 +164,11 @@
                         android:checked="true"
                         android:background="@drawable/gr_ly_btn_info_1"
                         android:gravity="center"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:letterSpacing="-0.02"
                         android:includeFontPadding="false"
                         android:textColor="@color/gr_ly_btn_info_text"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:text="그룹 정보" />
                     <View
                         android:layout_width="1dp"
@@ -172,11 +180,13 @@
                         android:layout_width="188dp"
                         android:layout_height="60dp"
                         android:button="@null"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:letterSpacing="-0.02"
                         android:background="@drawable/gr_ly_btn_info_2"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:textColor="@color/gr_ly_btn_info_text"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:text="그룹원 정보" />
                 </RadioGroup>
 
@@ -197,6 +207,8 @@
             android:layout_marginHorizontal="18dp"
             android:background="@drawable/gr_ly_btn_other_group"
             android:gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
             android:text="다른 그룹 구경가기"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -210,6 +222,8 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/gr_ly_btn_exit"
             android:gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:letterSpacing="-0.02"
             android:text="탈퇴하기"
             android:textColor="#8d8a8a"
             android:textSize="18sp" />

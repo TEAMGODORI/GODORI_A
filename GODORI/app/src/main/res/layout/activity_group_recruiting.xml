@@ -67,7 +67,7 @@
                 android:fontFamily="@font/notosanskr_medium"
                 android:text="운동 취향을 선택하고\n나에게 맞는 그룹을 찾아보세요"
                 android:textColor="@color/white"
-                android:textSize="12dp" />
+                android:textSize="14dp" />
 
             <ImageButton
                 android:id="@+id/gr_btn_recruiting_modify"
