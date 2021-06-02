@@ -64,7 +64,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="32dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="34dp"
                 android:orientation="vertical">
 
@@ -84,12 +84,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginTop="10dp"
+
                     android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle1"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
@@ -102,10 +103,10 @@
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle2"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
                         android:gravity="center"
@@ -117,10 +118,10 @@
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle3"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
                         android:gravity="center"
@@ -132,10 +133,10 @@
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle4"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
                         android:gravity="center"
@@ -147,10 +148,10 @@
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle5"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
                         android:gravity="center"
@@ -162,10 +163,10 @@
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle6"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
                         android:gravity="center"
@@ -177,10 +178,10 @@
 
                     <RadioButton
                         android:id="@+id/gr_rb_creation4_cycle7"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_cycle"
                         android:button="@null"
                         android:gravity="center"
@@ -205,14 +206,14 @@
                 <RadioGroup
                     android:id="@+id/groupCreation_intensity"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="121dp"
                     android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/groupCreation_intensity1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="114dp"
+                        android:layout_height="114dp"
                         android:layout_gravity="center"
                         android:background="@drawable/gr_ly_btn_creation_level"
                         android:button="@null"
@@ -224,8 +225,8 @@
 
                     <RadioButton
                         android:id="@+id/groupCreation_intensity2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="114dp"
+                        android:layout_height="114dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_level"
@@ -238,8 +239,8 @@
 
                     <RadioButton
                         android:id="@+id/groupCreation_intensity3"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="114dp"
+                        android:layout_height="114dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
                         android:background="@drawable/gr_ly_btn_creation_level"
@@ -268,7 +269,7 @@
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise1"
-                        android:layout_width="170dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_marginTop="14dp"
                         android:background="@drawable/gr_ly_button_exercise_check"
@@ -282,7 +283,7 @@
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise2"
-                        android:layout_width="170dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_marginTop="14dp"
                         android:layout_toRightOf="@+id/gr_cb_creation4_exercise1"
@@ -297,7 +298,7 @@
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise3"
-                        android:layout_width="170dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/gr_cb_creation4_exercise1"
                         android:background="@drawable/gr_ly_button_exercise_check"
@@ -311,7 +312,7 @@
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise4"
-                        android:layout_width="170dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/gr_cb_creation4_exercise2"
                         android:layout_toRightOf="@+id/gr_cb_creation4_exercise3"
@@ -326,7 +327,7 @@
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise5"
-                        android:layout_width="170dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/gr_cb_creation4_exercise3"
                         android:background="@drawable/gr_ly_button_exercise_check"
@@ -340,7 +341,7 @@
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise6"
-                        android:layout_width="170dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/gr_cb_creation4_exercise4"
                         android:layout_toRightOf="@+id/gr_cb_creation4_exercise5"
