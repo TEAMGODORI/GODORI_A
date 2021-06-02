@@ -112,12 +112,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#6280f2"
-                android:textSize="30sp"
+                android:textSize="26sp"
                 android:includeFontPadding="false"
                 android:textStyle="bold"
                 android:text="1"
-                android:layout_marginTop="66dp"
-                android:layout_marginLeft="35dp" />
+                android:layout_marginTop="68dp"
+                android:layout_marginLeft="36dp" />
         </RelativeLayout>
 
         <TextView
