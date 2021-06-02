@@ -51,13 +51,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:includeFontPadding="false"
                     android:text="기본 정보를 입력해주세요"
                     android:fontFamily="@font/notosanskr_bold"
                     android:letterSpacing="-0.02"
                     android:textColor="#ffffff"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <RelativeLayout
@@ -127,11 +127,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:includeFontPadding="false"
-                    android:text="공개 설정"
+                    android:text="그룹 공개 설정"
                     android:letterSpacing="-0.02"
                     android:fontFamily="@font/notosanskr_medium"
                     android:textColor="@color/white"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/gr_tv_creation2_subtitle2"
