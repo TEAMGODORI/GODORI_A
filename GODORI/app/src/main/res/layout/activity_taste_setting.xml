@@ -63,8 +63,8 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle1"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:textSize="14sp"
                     android:background="@drawable/taste_ly_btn_cycle"
@@ -76,10 +76,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle2"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -89,10 +89,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle3"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -102,10 +102,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle4"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -115,10 +115,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle5"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -128,10 +128,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle6"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -141,10 +141,10 @@
 
                 <RadioButton
                     android:id="@+id/taste_rb_cycle7"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_cycle"
                     android:button="@null"
                     android:gravity="center"
@@ -175,14 +175,14 @@
             <RadioGroup
                 android:id="@+id/taste_btn_intensity"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="114dp"
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/taste_btn_intensity1"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="114dp"
+                    android:layout_height="114dp"
                     android:layout_gravity="center"
                     android:background="@drawable/taste_ly_btn_level"
                     android:button="@null"
@@ -195,8 +195,8 @@
 
                 <RadioButton
                     android:id="@+id/taste_btn_intensity2"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="114dp"
+                    android:layout_height="114dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_level"
@@ -210,8 +210,8 @@
 
                 <RadioButton
                     android:id="@+id/taste_btn_intensity3"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="114dp"
+                    android:layout_height="114dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/taste_ly_btn_level"
