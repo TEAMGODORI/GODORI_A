@@ -71,7 +71,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/notosanskr_bold"
                     android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
@@ -82,9 +81,8 @@
                 <RadioGroup
                     android:id="@+id/gr_rg_creation4_cycle"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -206,8 +204,8 @@
                 <RadioGroup
                     android:id="@+id/groupCreation_intensity"
                     android:layout_width="match_parent"
-                    android:layout_height="121dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -265,27 +263,28 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise1"
                         android:layout_width="187dp"
                         android:layout_height="42dp"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/gr_ly_button_exercise_check"
                         android:button="@null"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:text="헬스"
-                        android:textSize="14sp"
                         android:letterSpacing="-0.02"
-                        android:textColor="@drawable/gr_text_color" />
+                        android:text="헬스"
+                        android:textColor="@drawable/gr_text_color"
+                        android:textSize="14sp" />
 
                     <CheckBox
                         android:id="@+id/gr_cb_creation4_exercise2"
                         android:layout_width="187dp"
                         android:layout_height="42dp"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/gr_cb_creation4_exercise1"
                         android:background="@drawable/gr_ly_button_exercise_check"
                         android:button="@null"
