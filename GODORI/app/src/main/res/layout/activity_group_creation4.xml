@@ -365,8 +365,8 @@
         <Button
             android:id="@+id/gr_btn_creation4_next"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginHorizontal="32dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
             android:background="@drawable/gr_ly_btn_next"
             android:enabled="false"
             android:gravity="center"
@@ -374,6 +374,6 @@
             android:letterSpacing="-0.02"
             android:text="완료"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="16dp" />
     </LinearLayout>
 </LinearLayout>
