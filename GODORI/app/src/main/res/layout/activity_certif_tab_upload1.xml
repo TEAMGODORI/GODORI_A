@@ -253,7 +253,7 @@
         <Button
             android:id="@+id/next1Btn"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="25dp"
@@ -263,6 +263,6 @@
             android:letterSpacing="-0.02"
             android:text="다음"
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 </LinearLayout>

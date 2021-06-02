@@ -159,7 +159,7 @@
                     <RadioButton
                         android:id="@+id/gr_btn_info_1"
                         android:layout_width="188dp"
-                        android:layout_height="60dp"
+                        android:layout_height="48dp"
                         android:button="@null"
                         android:checked="true"
                         android:background="@drawable/gr_ly_btn_info_1"
@@ -168,17 +168,17 @@
                         android:letterSpacing="-0.02"
                         android:includeFontPadding="false"
                         android:textColor="@color/gr_ly_btn_info_text"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:text="그룹 정보" />
                     <View
                         android:layout_width="1dp"
-                        android:layout_height="60dp"
+                        android:layout_height="48dp"
                         android:background="#f2f2f2" />
 
                     <RadioButton
                         android:id="@+id/gr_btn_info_2"
                         android:layout_width="188dp"
-                        android:layout_height="60dp"
+                        android:layout_height="48dp"
                         android:button="@null"
                         android:fontFamily="@font/notosanskr_medium"
                         android:letterSpacing="-0.02"
@@ -186,7 +186,7 @@
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:textColor="@color/gr_ly_btn_info_text"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:text="그룹원 정보" />
                 </RadioGroup>
 
@@ -203,7 +203,7 @@
         <Button
             android:id="@+id/gr_btn_otherGroup"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="18dp"
             android:background="@drawable/gr_ly_btn_other_group"
             android:gravity="center"
@@ -211,12 +211,12 @@
             android:letterSpacing="-0.02"
             android:text="다른 그룹 구경가기"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="16dp" />
 
         <Button
             android:id="@+id/gr_btn_exit"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
@@ -226,6 +226,6 @@
             android:letterSpacing="-0.02"
             android:text="탈퇴하기"
             android:textColor="#8d8a8a"
-            android:textSize="18sp" />
+            android:textSize="16dp" />
     </LinearLayout>
 </ScrollView>

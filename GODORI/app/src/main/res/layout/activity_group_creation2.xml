@@ -51,13 +51,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:includeFontPadding="false"
                     android:text="기본 정보를 입력해주세요"
                     android:fontFamily="@font/notosanskr_bold"
                     android:letterSpacing="-0.02"
                     android:textColor="#ffffff"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <RelativeLayout
@@ -127,11 +127,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:includeFontPadding="false"
-                    android:text="공개 설정"
+                    android:text="그룹 공개 설정"
                     android:letterSpacing="-0.02"
                     android:fontFamily="@font/notosanskr_medium"
                     android:textColor="@color/white"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/gr_tv_creation2_subtitle2"
@@ -165,16 +165,16 @@
         android:layout_marginBottom="24dp">
         <Button
             android:id="@+id/gr_btn_creation2_next"
-            android:layout_marginHorizontal="32dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="48dp"
             android:enabled="false"
             android:background="@drawable/gr_ly_btn_next"
             android:gravity="center"
             android:fontFamily="@font/notosanskr_medium"
             android:letterSpacing="-0.02"
             android:text="다음"
-            android:textSize="18sp"
+            android:textSize="16dp"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
             android:text="그룹 정보"
-            android:fontFamily="@font/notosanskr_bold"
+            android:fontFamily="@font/notosanskr_medium"
             android:letterSpacing="-0.02"
             android:textColor="#494949"
             android:textSize="16sp" />
@@ -190,7 +190,7 @@
                 android:includeFontPadding="false"
                 android:text="달성률"
                 android:textColor="#6280f2"
-                android:fontFamily="@font/notosanskr_bold"
+                android:fontFamily="@font/notosanskr_medium"
                 android:letterSpacing="-0.02" />
 
             <TextView
@@ -231,7 +231,7 @@
                 android:includeFontPadding="false"
                 android:text="선호하는 운동"
                 android:textColor="#6280f2"
-                android:fontFamily="@font/notosanskr_bold"
+                android:fontFamily="@font/notosanskr_medium"
                 android:letterSpacing="-0.02" />
 
             <TextView

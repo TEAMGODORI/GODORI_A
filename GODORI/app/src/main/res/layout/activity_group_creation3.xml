@@ -47,13 +47,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:includeFontPadding="false"
                     android:text="그룹 한 줄 소개"
                     android:fontFamily="@font/notosanskr_bold"
                     android:letterSpacing="-0.02"
                     android:textColor="#ffffff"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,10 +63,10 @@
                 android:layout_marginTop="34dp">
                 <EditText
                     android:id="@+id/gr_et_creation3_line"
-                    android:layout_width="350dp"
-                    android:layout_height="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
                     android:layout_marginTop="20dp"
-                    android:paddingLeft="2dp"
+                    android:paddingLeft="10dp"
                     android:letterSpacing="-0.02"
                     android:hint="예시)헬린이들 모여라, 거북목에서 벗어납시다!"
                     android:textColorHint="@color/white"
@@ -86,16 +86,16 @@
         android:layout_marginBottom="24dp">
         <Button
             android:id="@+id/gr_btn_creation3_next"
-            android:layout_marginHorizontal="32dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="48dp"
             android:background="@drawable/gr_ly_btn_next"
             android:enabled="false"
             android:gravity="center"
             android:fontFamily="@font/notosanskr_medium"
             android:letterSpacing="-0.02"
             android:text="다음"
-            android:textSize="18sp"
+            android:textSize="16dp"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>
