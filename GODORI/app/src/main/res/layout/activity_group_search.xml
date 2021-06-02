@@ -48,6 +48,7 @@
             android:layout_below="@+id/gr_tv_search_title"
             android:layout_marginTop="59dp"
             android:hint="그룹 검색하기"
+            android:paddingLeft="4dp"
             android:theme="@style/customTextViewFontStyle"
             android:fontFamily="@font/notosanskr_medium"
             android:letterSpacing="-0.02"
@@ -60,11 +61,12 @@
 
         <ImageButton
             android:id="@+id/gr_btn_search"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
             android:layout_below="@+id/gr_tv_search_title"
             android:layout_alignParentRight="true"
             android:layout_marginTop="70dp"
+            android:paddingRight="4dp"
             android:background="@color/transparent"
             android:enabled="false"
             android:scaleType="centerCrop"

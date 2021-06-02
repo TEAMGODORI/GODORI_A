@@ -243,7 +243,7 @@
                         android:fontFamily="@font/notosanskr_medium"
                         android:includeFontPadding="false"
                         android:letterSpacing="-0.02"
-                        android:text="운동 주기"
+                        android:text="주간 인증"
                         android:textColor="#6280f2" />
 
                     <TextView
