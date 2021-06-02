@@ -52,7 +52,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -76,13 +77,13 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
 
                     <CheckBox
                         android:id="@+id/exercise_Btn1"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
-                        android:layout_marginLeft="42dp"
                         android:layout_marginTop="24dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
@@ -96,7 +97,7 @@
 
                     <CheckBox
                         android:id="@+id/exercise_Btn2"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_marginTop="24dp"
                         android:layout_toRightOf="@+id/exercise_Btn1"
@@ -113,10 +114,9 @@
 
                     <CheckBox
                         android:id="@+id/exercise_Btn3"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/exercise_Btn1"
-                        android:layout_marginLeft="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
                         android:fontFamily="@font/notosanskr_medium"
@@ -129,7 +129,7 @@
 
                     <CheckBox
                         android:id="@+id/exercise_Btn4"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/exercise_Btn2"
                         android:layout_toRightOf="@+id/exercise_Btn3"
@@ -146,10 +146,9 @@
 
                     <CheckBox
                         android:id="@+id/exercise_Btn5"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/exercise_Btn3"
-                        android:layout_marginLeft="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
                         android:fontFamily="@font/notosanskr_medium"
@@ -162,7 +161,7 @@
 
                     <CheckBox
                         android:id="@+id/exercise_Btn6"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/exercise_Btn4"
                         android:layout_toRightOf="@+id/exercise_Btn5"
@@ -256,14 +255,16 @@
             </LinearLayout>
 
             <View
-                android:layout_width="348dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginLeft="32dp"
                 android:background="#eff0f0" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="246dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -289,13 +290,14 @@
                     android:id="@+id/intensity_RBtn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginLeft="42dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/intensity_Btn1"
-                        android:layout_width="109dp"
+                        android:layout_width="125dp"
                         android:layout_height="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
@@ -309,7 +311,7 @@
 
                     <RadioButton
                         android:id="@+id/intensity_Btn2"
-                        android:layout_width="109dp"
+                        android:layout_width="125dp"
                         android:layout_height="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
@@ -323,7 +325,7 @@
 
                     <RadioButton
                         android:id="@+id/intensity_Btn3"
-                        android:layout_width="109dp"
+                        android:layout_width="125dp"
                         android:layout_height="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
@@ -338,14 +340,16 @@
             </LinearLayout>
 
             <View
-                android:layout_width="348dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginLeft="32dp"
                 android:background="#eff0f0" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="404dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -369,13 +373,13 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
 
                     <CheckBox
                         android:id="@+id/reviews_Btn1"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
-                        android:layout_marginLeft="42dp"
                         android:layout_marginTop="24dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
@@ -389,7 +393,7 @@
 
                     <CheckBox
                         android:id="@+id/reviews_Btn2"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_marginTop="24dp"
                         android:layout_toRightOf="@+id/reviews_Btn1"
@@ -405,10 +409,9 @@
 
                     <CheckBox
                         android:id="@+id/reviews_Btn3"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/reviews_Btn1"
-                        android:layout_marginLeft="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
                         android:fontFamily="@font/notosanskr_medium"
@@ -421,7 +424,7 @@
 
                     <CheckBox
                         android:id="@+id/reviews_Btn4"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/reviews_Btn2"
                         android:layout_toRightOf="@+id/reviews_Btn3"
@@ -437,10 +440,9 @@
 
                     <CheckBox
                         android:id="@+id/reviews_Btn5"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/reviews_Btn3"
-                        android:layout_marginLeft="42dp"
                         android:background="@drawable/ct_ly_button_exercise_check"
                         android:button="@null"
                         android:fontFamily="@font/notosanskr_medium"
@@ -453,7 +455,7 @@
 
                     <CheckBox
                         android:id="@+id/reviews_Btn6"
-                        android:layout_width="164dp"
+                        android:layout_width="187dp"
                         android:layout_height="42dp"
                         android:layout_below="@+id/reviews_Btn4"
                         android:layout_toRightOf="@+id/reviews_Btn5"
@@ -467,6 +469,11 @@
                         android:textColor="@color/ct_text_color"
                         android:textSize="14sp" />
                 </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/next3Btn"
@@ -474,7 +481,6 @@
                     android:layout_height="48dp"
                     android:layout_alignParentBottom="true"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="42dp"
                     android:layout_marginBottom="18dp"
                     android:background="@drawable/gr_ly_btn_next"
                     android:enabled="false"
