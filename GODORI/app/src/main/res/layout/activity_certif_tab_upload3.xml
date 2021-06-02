@@ -60,7 +60,7 @@
                     android:layout_height="72dp"
                     android:layout_marginLeft="170dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/ct_ic_exercise" />
+                    android:src="@drawable/ct_ic_exercise_barbell" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -271,7 +271,7 @@
                     android:layout_height="72dp"
                     android:layout_marginLeft="170dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/ct_ic_exercise" />
+                    android:src="@drawable/ct_ic_exercise_fire" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -353,7 +353,7 @@
                     android:layout_height="72dp"
                     android:layout_marginLeft="170dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/ct_ic_exercise" />
+                    android:src="@drawable/ct_ic_exercise_comment" />
 
                 <TextView
                     android:layout_width="wrap_content"
