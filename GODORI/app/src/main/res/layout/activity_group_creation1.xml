@@ -70,7 +70,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="85dp"
                     android:backgroundTint="@color/main"
-                    android:paddingLeft="2dp"
+                    android:paddingLeft="4dp"
                     android:gravity="center_horizontal"
                     android:maxLength="15"
                     android:singleLine="true"
